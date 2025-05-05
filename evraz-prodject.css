@@ -148,7 +148,83 @@
 .rectangle18{
     position: relative;
     background-color: #333333;
-    width: 100px;
-    height: 75px;
-
+    width: 25px;
+    height: 45px;
+    left: 314px;
+    bottom: 796px;
+}
+.rectangle19{
+    position: relative;
+    background-color: #333333;
+    width: 25px;
+    height: 5px;
+    left: 913px;
+    bottom: 848px;
+}
+.rectangle20{
+    position: relative;
+    background-color: #333333;
+    width: 5px;
+    height: 40px;
+    bottom: 850px;
+    left:923px;
+}
+.rectangle21{
+    position: relative;
+    background-color: #333333;
+    width: 5px;
+    height: 40px;
+    bottom: 894px;
+    left:1134px;
+}
+.rectangle22{
+    position: relative;
+    background-color: #333333;
+    width: 5px;
+    height: 40px;
+    bottom: 932px;
+    left:1220px;
+}
+.rectangle23{
+    position: relative;
+    border: 1px solid #333333;
+    width: 50px;
+    height: 50px;
+    left: 1111px;
+    bottom: 950px;
+}
+.circle{
+    position: relative;
+    background-color: #f30606;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    bottom: 1125px;
+}
+.circle1{
+    position: relative;
+    background-color: #f30606;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    bottom: 1139px;
+    left:100px;
+}
+.circle2{
+    position: relative;
+    background-color: #f30606;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    bottom: 1153px;
+    left:200px;
+}
+.circle3{
+    position: relative;
+    background-color: #f30606;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    bottom: 1136px;
+    left:300px;
 }
