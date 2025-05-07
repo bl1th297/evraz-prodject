@@ -228,3 +228,54 @@
     bottom: 1136px;
     left:300px;
 }
+.circle4{
+    position: relative;
+    background-color: #f30606;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    bottom: 1180px;
+    left:900px;
+}
+.circle5{
+    position: relative;
+    background-color: #f30606;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    bottom: 1195px;
+    left:1112px;
+}
+.circle6{
+    position: relative;
+    background-color: #f30606;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    bottom: 1090px;
+    left:1112px;
+}
+.circle7{
+    position: relative;
+    background-color: #f30606;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    bottom: 1125px;
+    left:1000px;
+}
+.circle8{
+    position: relative;
+    background-color: #f30606;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    bottom: 1235px;
+    left:1200px;
+}
+.image-container {
+    display: flex;
+<image:url("https://illustrators.ru/uploads/illustration/image/1680590/square_marmalade_bear.jpg");
+    background-repeat: no-repeat;
+    background-size: 50px 25px;
+}
