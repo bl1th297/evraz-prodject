@@ -6,10 +6,15 @@
     <title>Замена картинки</title>
     <style>
         #image-container {
+            position: absolute;
+            left: 0px;
+
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 50px;
+
+            transition: all 2s;
         }
         img {
             max-width: 100%; /* Ограничиваем размер изображения */
@@ -30,6 +35,7 @@
         const img = document.getElementById("image-container")
         // Устанавливаем путь к изображению
         img.src = arr[i];
+        img.style.left = (i * 100) + 'px'
         if (i === 0) i += 1
         else i += 1;
         if(arr.length === i) i= 0

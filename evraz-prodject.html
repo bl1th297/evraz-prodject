@@ -9,6 +9,8 @@
     >
 </head>
 <body>
+
+
 <div class="rectangle1"></div>
 <div class="rectangle2"></div>
 <div class="rectangle3"></div>
@@ -43,10 +45,29 @@
 <div class="circle6"></div>
 <div class="circle7"></div>
 <div class="circle8"></div>
+<div class="circle9"></div>
 
-<div class="image-container"></div>
+<img id="image-container" src="img/b.png">
+
+<script>
+    let arr = ['img/b.png', "img/o.png","img/g.png", "img/buttom.png" ]
+    let arrPos = [0, 101,202, 303 ]
+    let i = 1
+    function changeSrc()
+    {
+        // Путь к новой картинке
+        const img = document.getElementById("image-container")
+        // Устанавливаем путь к изображению
+        img.src = arr[i];
+        img.style.left = arrPos[i] + 'px'
+        if (i === 0) i += 1
+        else i += 1;
+        if(arr.length === i) i= 0
 
 
+    }
+    setInterval(changeSrc, 2000)
+</script>
 
 
 

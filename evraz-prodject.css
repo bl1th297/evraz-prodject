@@ -44,7 +44,7 @@
     position: relative;
     width: 300px;
     height: 50px;
-    border: 1px solid #333333;
+    border: 1px solid grey;
     left:500px;
     bottom: 102px;
 }
@@ -68,7 +68,7 @@
     position: relative;
     width: 50px;
     height: 100px;
-    background-color: #333333;
+    background-color: grey;
     left:1111px;
     bottom: 375px;
 }
@@ -76,7 +76,7 @@
     position: relative;
     width: 50px;
     height: 100px;
-    background-color: #333333;
+    background-color:grey;
     left:1200px;
     bottom: 550px;
 }
@@ -148,9 +148,9 @@
 .rectangle18{
     position: relative;
     background-color: #333333;
-    width: 25px;
-    height: 45px;
-    left: 314px;
+    width: 15px;
+    height: 30px;
+    left: 318px;
     bottom: 796px;
 }
 .rectangle19{
@@ -159,14 +159,14 @@
     width: 25px;
     height: 5px;
     left: 913px;
-    bottom: 848px;
+    bottom: 835px;
 }
 .rectangle20{
     position: relative;
     background-color: #333333;
     width: 5px;
     height: 40px;
-    bottom: 850px;
+    bottom: 840px;
     left:923px;
 }
 .rectangle21{
@@ -191,7 +191,7 @@
     width: 50px;
     height: 50px;
     left: 1111px;
-    bottom: 950px;
+    bottom: 935px;
 }
 .circle{
     position: relative;
@@ -199,7 +199,7 @@
     width: 15px;
     height: 15px;
     border-radius: 10px;
-    bottom: 1125px;
+    bottom: 1112px;
 }
 .circle1{
     position: relative;
@@ -207,7 +207,7 @@
     width: 15px;
     height: 15px;
     border-radius: 10px;
-    bottom: 1139px;
+    bottom: 1128px;
     left:100px;
 }
 .circle2{
@@ -216,7 +216,7 @@
     width: 15px;
     height: 15px;
     border-radius: 10px;
-    bottom: 1153px;
+    bottom: 1143px;
     left:200px;
 }
 .circle3{
@@ -225,7 +225,7 @@
     width: 15px;
     height: 15px;
     border-radius: 10px;
-    bottom: 1136px;
+    bottom: 1123px;
     left:300px;
 }
 .circle4{
@@ -234,7 +234,7 @@
     width: 15px;
     height: 15px;
     border-radius: 10px;
-    bottom: 1180px;
+    bottom: 1168px;
     left:900px;
 }
 .circle5{
@@ -243,7 +243,7 @@
     width: 15px;
     height: 15px;
     border-radius: 10px;
-    bottom: 1195px;
+    bottom: 1186px;
     left:1112px;
 }
 .circle6{
@@ -252,7 +252,7 @@
     width: 10px;
     height: 10px;
     border-radius: 5px;
-    bottom: 1090px;
+    bottom: 1076px;
     left:1112px;
 }
 .circle7{
@@ -261,21 +261,43 @@
     width: 15px;
     height: 15px;
     border-radius: 10px;
-    bottom: 1125px;
+    bottom: 1112px;
     left:1000px;
 }
-.circle8{
+.circle8 {
     position: relative;
     background-color: #f30606;
     width: 15px;
     height: 15px;
     border-radius: 10px;
-    bottom: 1235px;
-    left:1200px;
+    bottom: 1222px;
+    left: 1200px;
 }
-.image-container {
+    .circle9{
+        position: relative;
+        background-color: #f30606;
+        width: 15px;
+        height: 15px;
+        border-radius: 10px;
+        bottom: 1120px;
+        left: 505px;
+    }
+
+
+#image-container {
+    position: relative;
+    left: 5px;
     display: flex;
-<image:url("https://illustrators.ru/uploads/illustration/image/1680590/square_marmalade_bear.jpg");
-    background-repeat: no-repeat;
-    background-size: 50px 25px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    transition: all 2s;
+
+}
+img {
+    width: 37px; /* Ограничиваем размер изображения */
+    height: 37px; /* Сохраняем пропорции */
+    bottom: 1167px;
+    left:25px;
+
 }
