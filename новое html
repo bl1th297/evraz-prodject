@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link
+rel="stylesheet"
+href="evraz-prodject.css"
+    >
+</head>
+<body>
+<div class="rectangle1"></div>
+<div class="rectangle2"></div>
+<div class="rectangle3"></div>
+<div class="rectangle4"></div>
+<div class="rectangle5"></div>
+<div class="rectangle6"></div>
+<div class="rectangle7"></div>
+<div class="rectangle8"></div>
+<div class="square"></div>
+<div class="rectangle9"></div>
+<div class="rectangle10"></div>
+<div class="rectangle11"></div>
+<div class="rectangle12"></div>
+<div class="rectangle13"></div>
+<div class="rectangle14"></div>
+<div class="rectangle15"></div>
+<div class="rectangle16"></div>
+<div class="rectangle17"></div>
+<div class="rectangle18"></div>
+<div class="rectangle19"></div>
+<div class="rectangle20"></div>
+<div class="rectangle21"></div>
+<div class="rectangle22"></div>
+<div class="rectangle23"></div>
+<div class="rectangle24"></div>
+<div class="circle"></div>
+<div class="circle1"></div>
+<div class="circle2"></div>
+<div class="circle3"></div>
+
+
+
+
+</body>
+</html>

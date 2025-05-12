@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Замена картинки</title>
+    <style>
+        #image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        img {
+            max-width: 100%; /* Ограничиваем размер изображения */
+            height: auto; /* Сохраняем пропорции */
+        }
+    </style>
+</head>
+<body>
+
+<img id="image-container" src="img/b.png"></img>
+
+<script>
+    let arr = ['img/b.png', "img/o.png","img/g.png", "img/buttom.png" ]
+    let i = 1
+    function changeSrc()
+    {
+        // Путь к новой картинке
+        const img = document.getElementById("image-container")
+        // Устанавливаем путь к изображению
+        img.src = arr[i];
+        if (i === 0) i += 1
+        else i += 1;
+        if(arr.length === i) i= 0
+
+
+    }
+    setInterval(changeSrc, 2000)
+</script>
+
+</body>
+</html>
