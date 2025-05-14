@@ -1,0 +1,186 @@
+.container {
+    width: 100%;
+    height: 320px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.rectangle2 {
+    position: relative; /* Для позиционирования круга относительно прямоугольника */
+    width: 120px;
+    height: 220px;
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    margin: 20px;
+}
+
+.rectangle3 {
+    position: relative; /* Для позиционирования круга относительно прямоугольника */
+    width: 120px;
+    height: 220px;
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    margin: 20px;
+
+}
+
+.rectangle4{
+    position: relative; /* Для позиционирования круга относительно прямоугольника */
+    width: 120px;
+    height: 220px;
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    margin: 20px;
+}
+.rectangle5 {
+    position: relative; /* Для позиционирования круга относительно прямоугольника */
+    width: 80px;
+    height: 120px;
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    margin: 20px;
+}
+
+.rectangle6{
+    position: relative;
+    width: 500px;
+    height: 100px;
+    border: 1px solid #333333;
+    left:25px;
+    top: 140px;
+}
+
+.rectangle7{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    left: 640px;
+    bottom: 180px;
+}
+
+.rectangle8{
+    position: relative; /* Для позиционирования круга относительно прямоугольника */
+    width: 120px;
+    height: 220px;
+    left: 45px;
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    margin: 20px;
+}
+
+.rectangle9{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #333333;
+    left: 90px;
+    top: 145px;
+}
+
+.rectangle10{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    left: 1380px;
+    bottom: 761px;
+}
+
+.rectangle11{
+    position: relative;
+    background-color: #333333;
+    width: 10px;
+    height: 80px;
+    left: 75px;
+    bottom: 130px;
+}
+
+.rectangle12{
+    position: relative;
+    background-color: #333333;
+    width: 10px;
+    height: 80px;
+    left: 238px;
+    bottom: 210px;
+}
+
+.button-red1{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #b10202;
+    border-radius: 50%;
+    top: 35px; /* Смещение на половину размера круга */
+    left: 35px; /* Смещение на половину размера круга */
+    border: 1px solid #333;
+}
+
+.button-red2{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #b10202;
+    border-radius: 50%;
+    top: 35px; /* Смещение на половину размера круга */
+    left: 200px; /* Смещение на половину размера круга */
+    border: 1px solid #333;
+}
+
+.button-red3{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #b10202;
+    border-radius: 50%;
+    top: 35px; /* Смещение на половину размера круга */
+    left: 365px; /* Смещение на половину размера круга */
+    border: 1px solid #333;
+}
+
+.button-red4{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #b10202;
+    border-radius: 50%;
+    top: 35px; /* Смещение на половину размера круга */
+    left: 525px; /* Смещение на половину размера круга */
+    border: 1px solid #333;
+}
+
+.button-red5{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #b10202;
+    border-radius: 50%;
+    top: 160px; /* Смещение на половину размера круга */
+    left: 660px; /* Смещение на половину размера круга */
+    border: 1px solid #333;
+}
+
+.button-red6{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #b10202;
+    border-radius: 50%;
+    top: 35px; /* Смещение на половину размера круга */
+    left: 1200px; /* Смещение на половину размера круга */
+    border: 1px solid #333;
+}
+
+.button-red7{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #b10202;
+    border-radius: 50%;
+    top: 159px; /* Смещение на половину размера круга */
+    left: 1386px; /* Смещение на половину размера круга */
+    border: 1px solid #333;
+}
