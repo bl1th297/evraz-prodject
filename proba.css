@@ -360,3 +360,34 @@ img{
     bottom: 600px;
     left: 1650px;
 }
+
+.nozzle {
+    width: 30px;
+    height: 30px;
+    background: #3498db;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.snowflake {
+    position: absolute;
+    animation: blink 1s infinite;
+    font-size: 15px;
+    bottom: 663px;
+
+}
+
+@keyframes blink {
+    50% { opacity: 0.3; }
+}
+
+@media (max-width: 2800px) {
+    .rectangle21{
+        bottom: 687px;
+    }
+    .rectangle22{
+        bottom: 703px;
+    }
+    .rectangle25{
+        bottom: 644px;
+    }
+}
