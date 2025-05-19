@@ -1,3 +1,7 @@
+.body {
+    background-color: #F7E4D3;
+}
+
 .container {
     width: 100%;
     height: 320px;
@@ -6,20 +10,29 @@
     flex-wrap: nowrap;
 }
 
+.rectangle1 {
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #585858;
+    position: absolute;
+    top: 360px;
+}
+
 .rectangle2 {
     position: relative; /* Для позиционирования круга относительно прямоугольника */
-    width: 120px;
-    height: 220px;
-    background-color: #f0f0f0;
+    width: 100px;
+    height: 200px;
+    background-color: #ED7914;
     border: 2px solid #333;
     margin: 20px;
 }
 
 .rectangle3 {
     position: relative; /* Для позиционирования круга относительно прямоугольника */
-    width: 120px;
-    height: 220px;
-    background-color: #f0f0f0;
+    width: 100px;
+    height: 200px;
+    background-color: #ED7914;
     border: 2px solid #333;
     margin: 20px;
 
@@ -27,9 +40,9 @@
 
 .rectangle4{
     position: relative; /* Для позиционирования круга относительно прямоугольника */
-    width: 120px;
-    height: 220px;
-    background-color: #f0f0f0;
+    width: 100px;
+    height: 200px;
+    background-color: #ED7914;
     border: 2px solid #333;
     margin: 20px;
 }
@@ -37,47 +50,51 @@
     position: relative; /* Для позиционирования круга относительно прямоугольника */
     width: 80px;
     height: 120px;
-    background-color: #f0f0f0;
+    background-color: #ED7914;
     border: 2px solid #333;
     margin: 20px;
+    top:45px;
 }
 
 .rectangle6{
     position: relative;
-    width: 500px;
+    width: 350px;
     height: 100px;
-    border: 1px solid #333333;
-    left:25px;
-    top: 140px;
+    background-color: rgb(240, 249, 255);
+    border: 1px solid #000000;
+    left: 180px;
+    top: 250px;
 }
 
 .rectangle7{
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-color: #f0f0f0;
     border: 2px solid #333;
-    left: 640px;
-    bottom: 180px;
+    left: 736px;
+    bottom: 70px;
 }
 
 .rectangle8{
     position: relative; /* Для позиционирования круга относительно прямоугольника */
-    width: 120px;
-    height: 220px;
-    left: 45px;
-    background-color: #f0f0f0;
+    width: 100px;
+    height: 200px;
+    left: 220px;
+    background-color: #ED7914;
     border: 2px solid #333;
     margin: 20px;
+
 }
 
 .rectangle9{
     position: relative;
     width: 100px;
     height: 100px;
+    background-color: rgb(255, 239, 237);
     border: 1px solid #333333;
-    left: 90px;
-    top: 145px;
+    left: 265px;
+    top: 250px;
 }
 
 .rectangle10{
@@ -86,26 +103,155 @@
     height: 35px;
     background-color: #f0f0f0;
     border: 2px solid #333;
-    left: 1380px;
-    bottom: 761px;
+    left: 1325px;
+    top: 258px;
 }
 
 .rectangle11{
     position: relative;
-    background-color: #333333;
+    background-color: #ff9362;
     width: 10px;
-    height: 80px;
-    left: 75px;
-    bottom: 130px;
+    height: 70px;
+    left: 65px;
+    bottom: 140px;
 }
 
 .rectangle12{
     position: relative;
-    background-color: #333333;
+    background-color: #ff9362;
     width: 10px;
-    height: 80px;
-    left: 238px;
+    height: 70px;
+    left: 210px;
     bottom: 210px;
+}
+
+.rectangle13{
+    position: relative;
+    background-color: #000000;
+    width: 44px;
+    height: 10px;
+    bottom: 410px;
+    left:410px;
+}
+
+.rectangle14 {
+    position: relative;
+    background-color: #ff9362;
+    width: 150px;
+    height: 10px;
+    bottom: 420px;
+    left: 536px;
+}
+
+.rectangle15 {
+    position: relative;
+    background-color: #ff9362;
+    width: 10px;
+    height: 160px;
+    bottom: 430px;
+    left:685px;
+}
+
+.rectangle16 {
+    position: relative; /* Для позиционирования круга относительно прямоугольника */
+    width: 100px;
+    height: 200px;
+    left: 300px;
+    background-color: #ED7914;
+    border: 2px solid #333;
+    margin: 20px;
+}
+
+.rectangle17 {
+    position: relative; /* Для позиционирования круга относительно прямоугольника */
+    width: 100px;
+    height: 200px;
+    left: 330px;
+    background-color: #ED7914;
+    border: 2px solid #333;
+    margin: 20px;
+}
+
+.rectangle18 {
+    position: relative;
+    background-color: #ff9362;
+    width: 90px;
+    height: 10px;
+    bottom: 540px;
+    left: 536px;
+}
+
+.rectangle19 {
+    position: relative;
+    background-color: #ff9362;
+    width: 10px;
+    height: 100px;
+    bottom: 540px;
+    left: 616px;
+}
+
+.rectangle20{
+    position: relative;
+    background-color: #ff9362;
+    width: 10px;
+    height: 70px;
+    left: 353px;
+    bottom: 570px;
+}
+
+.rectangle21{
+    position: absolute;
+    background-color: black;
+    width: 30px;
+    height: 70px;
+    left: 486px;
+    bottom: 680px;
+}
+
+.rectangle22{
+    position: absolute;
+    background-color: black;
+    width: 40px;
+    height: 20px;
+    left: 1187px;
+    bottom: 695px;
+}
+
+.rectangle23{
+    position: relative;
+    background-color: #ff9362;
+    width: 10px;
+    height: 60px;
+    left: 1194px;
+    bottom: 622px;
+}
+
+.rectangle24{
+    position: relative;
+    background-color: #000000;
+    width: 15px;
+    height: 30px;
+    left: 1517px;
+    bottom: 700px;
+}
+
+.rectangle25{
+    position: absolute;
+    background-color: #ff9362;
+    border: 2px solid #000000;
+    width: 65px;
+    height: 45px;
+    left: 1500px;
+    bottom: 635px;
+}
+
+.rectangle26{
+    position: relative;
+    background-color: #ff9362;
+    width: 10px;
+    height: 60px;
+    left: 1675px;
+    bottom: 730px;
 }
 
 .button-red1{
@@ -126,7 +272,7 @@
     background: #b10202;
     border-radius: 50%;
     top: 35px; /* Смещение на половину размера круга */
-    left: 200px; /* Смещение на половину размера круга */
+    left: 180px; /* Смещение на половину размера круга */
     border: 1px solid #333;
 }
 
@@ -137,7 +283,7 @@
     background: #b10202;
     border-radius: 50%;
     top: 35px; /* Смещение на половину размера круга */
-    left: 365px; /* Смещение на половину размера круга */
+    left: 325px; /* Смещение на половину размера круга */
     border: 1px solid #333;
 }
 
@@ -147,8 +293,8 @@
     height: 25px;
     background: #b10202;
     border-radius: 50%;
-    top: 35px; /* Смещение на половину размера круга */
-    left: 525px; /* Смещение на половину размера круга */
+    top: 80px; /* Смещение на половину размера круга */
+    left: 470px; /* Смещение на половину размера круга */
     border: 1px solid #333;
 }
 
@@ -158,8 +304,8 @@
     height: 25px;
     background: #b10202;
     border-radius: 50%;
-    top: 160px; /* Смещение на половину размера круга */
-    left: 660px; /* Смещение на половину размера круга */
+    top: 267px; /* Смещение на половину размера круга */
+    left: 752px; /* Смещение на половину размера круга */
     border: 1px solid #333;
 }
 
@@ -170,7 +316,7 @@
     background: #b10202;
     border-radius: 50%;
     top: 35px; /* Смещение на половину размера круга */
-    left: 1200px; /* Смещение на половину размера круга */
+    left: 1165px; /* Смещение на половину размера круга */
     border: 1px solid #333;
 }
 
@@ -180,7 +326,37 @@
     height: 25px;
     background: #b10202;
     border-radius: 50%;
-    top: 159px; /* Смещение на половину размера круга */
-    left: 1386px; /* Смещение на половину размера круга */
+    top: 264px; /* Смещение на половину размера круга */
+    left: 1331px; /* Смещение на половину размера круга */
     border: 1px solid #333;
+}
+
+.button-red8{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #b10202;
+    border-radius: 50%;
+    top: 35px; /* Смещение на половину размера круга */
+    left: 1490px; /* Смещение на половину размера круга */
+    border: 1px solid #333;
+}
+
+.button-red9{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #b10202;
+    border-radius: 50%;
+    top: 35px; /* Смещение на половину размера круга */
+    left: 1665px; /* Смещение на половину размера круга */
+    border: 1px solid #333;
+}
+
+img{
+    position: relative;
+    width: 220px;
+    height: 350px;
+    bottom: 600px;
+    left: 1650px;
 }
