@@ -353,13 +353,18 @@
     border: 1px solid #333;
 }
 
-img{
-    position: relative;
-    width: 220px;
-    height: 350px;
-    bottom: 600px;
-    left: 1650px;
+
+div.employee{
+    img{
+        position:absolute;
+        width: 220px;
+        height: 350px;
+        top: 450px;
+        left: 1650px;
+    }
 }
+
+
 
 .nozzle {
     width: 30px;
@@ -446,3 +451,20 @@ img{
 
 .roller-left { left: -12px; top: -3px; }
 .roller-right { right: -12px; top: -3px; }
+#image-container {
+    position: relative;
+    left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    transition: all 2s;
+
+}
+img {
+    width: 37px; /* Ограничиваем размер изображения */
+    height: 37px; /* Сохраняем пропорции */
+    top:100px;
+    left:25px;
+
+}
