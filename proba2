@@ -59,10 +59,37 @@
   </div>
   <div class="conveyor-line working"></div>
 </div>
-<div class="conveyor-belt working">
+<div class="conveyor-belt working"></div>
   <div class="conveyor-roller roller-left"></div>
   <div class="conveyor-roller roller-right"></div>
-<img src="img/evraz.jpg"/>
+<div class="employee"><img src="img/employee.png" /></div>
+
+
+  <img id="image-container" src="img/b.png">
+
+
+  <!-- Контейнер для индикаторов -->
+
+  <script>
+    let arr = ['img/b.png', "img/o.png","img/g.png", "img/buttom.png",'img/b.png', "img/o.png", "img/o.png", "img/buttom.png", "img/o.png" ];
+    let arrPos = [0, 101,202, 303, 353,403, 650, 905, 1021, 1116,1210 ];
+    let i = 1;
+    function changeSrc() {
+      const img = document.getElementById("image-container");
+      img.src = arr[i];
+      img.style.left = arrPos[i] + 'px';
+      i++;
+      if(i >= arr.length) i=0;
+    }
+    setInterval(changeSrc, 3000);
+
+
+
+  </script>
+
+
+
+  </script>
 
 
 
@@ -71,6 +98,6 @@
 
 
 
-  <script scr="test2.js"></script>
+
 </body>
 </html>
