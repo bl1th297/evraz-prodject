@@ -1,0 +1,61 @@
+
+.conveyor-belt {
+    position: relative;
+    height: 60px;
+    margin: 15px 0;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+/* Полосы конвейера с анимацией */
+.conveyor-belt::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: repeating-linear-gradient(
+            90deg,
+            #ddd 0px,
+            #ddd 15px,
+            #999 15px,
+            #999 30px
+    );
+    animation: moveBelt 35s linear infinite;
+}
+
+/* Цветовые состояния */
+.conveyor-belt.working::before { background-color: #2ecc71; }
+.conveyor-belt.stopped::before {
+    animation-play-state: paused;
+    background-color: #f1c40f;
+}
+.conveyor-belt.error::before {
+    animation: beltError 0.5s infinite alternate;
+    background-color: #e74c3c;
+}
+
+/* Анимация движения ленты */
+@keyframes moveBelt {
+    100% { transform: translateX(0); }
+    0% { transform: translateX(-50%); }
+}
+
+/* Анимация аварийного мигания */
+@keyframes beltError {
+    from { opacity: 1; }
+    to { opacity: 0.3; }
+}
+
+/* Дополнительные элементы */
+.conveyor-roller {
+    width: 25px;
+    height: 25px;
+    background: #f40000;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.roller-left { left: -12px; top: -3px; }
+.roller-right { right: -12px; top: -3px; }

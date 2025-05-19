@@ -80,157 +80,25 @@
 <div class="circle9"></div>
 
 <img id="image-container" src="img/b.png">
-<h3>Смеситель</h3>
-<button id="left-on">Включить</button>
-<button id="left-off">Выключить</button>
-<button id="left-err">Авария</button>
 
-<!-- Кнопки для управления правым индикатором -->
-<h3>Правый индикатор</h3>
-<button id="right-on">Включить</button>
-<button id="right-off">Выключить</button>
-<button id="right-err">Авария</button>
 
 <!-- Контейнер для индикаторов -->
-<div id="indicatorsContainer"></div>
-<canvas id="conveyor" width="800" height="200"></canvas>
 
 <script>
-    let arr = ['img/b.png', "img/o.png","img/g.png", "img/buttom.png",'img/b.png', "img/o.png", "img/o.png", "img/buttom.png", "img/o.png" ]
-    let arrPos = [0, 101,202, 303, 353,403, 650, 905, 1021, 1116,1210 ]
-    let i = 1
-    function changeSrc()
-    {
-        // Путь к новой картинке
-        const img = document.getElementById("image-container")
-        // Устанавливаем путь к изображению
+    let arr = ['img/b.png', "img/o.png","img/g.png", "img/buttom.png",'img/b.png', "img/o.png", "img/o.png", "img/buttom.png", "img/o.png" ];
+    let arrPos = [0, 101,202, 303, 353,403, 650, 905, 1021, 1116,1210 ];
+    let i = 1;
+    function changeSrc() {
+        const img = document.getElementById("image-container");
         img.src = arr[i];
-        img.style.left = arrPos[i] + 'px'
-        if (i === 0) i += 1
-        else i += 1;
-        if(arr.length === i) i= 0
-
-
+        img.style.left = arrPos[i] + 'px';
+        i++;
+        if(i >= arr.length) i=0;
     }
-    setInterval(changeSrc, 3000)
-    // Возможные состояния
+    setInterval(changeSrc, 3000);
 
-    let indicators = document.createElement("div");
-    indicators.className = "radar-indicators";
 
-    // Создаем левый индикатор
-    let leftIndicator = document.createElement("div");
-    leftIndicator.className = "indicator left";
-    leftIndicator.id = "left-indicator";
 
-    // Создаем правый индикатор
-    let rightIndicator = document.createElement("div");
-    rightIndicator.className = "indicator right";
-    rightIndicator.id = "right-indicator";
-
-    // Вставляем их в контейнер
-    indicators.appendChild(leftIndicator);
-    indicators.appendChild(rightIndicator);
-    document.getElementById('indicatorsContainer').appendChild(indicators);
-
-    // Переменные состояния (можно расширять или менять по необходимости)
-    let leftState = 'off';   // возможные значения: 'on', 'off', 'error'
-    let rightState = 'off';
-
-    // Функция обновления цвета по состоянию
-
-    // Обновляем левый индикатор
-    function updateIndicators() {
-        // Обновляем левый индикатор
-        switch (leftState) {
-            case 'on':
-                leftIndicator.className = "indicator left green";
-                break;
-            case 'off':
-                // Теперь 'off' — красный (авария)
-                leftIndicator.className = "indicator left red";
-                break;
-            case 'error':
-                // Теперь 'error' — желтый (выключено)
-                leftIndicator.className = "indicator left yellow";
-                break;
-        }
-
-        // Обновляем правый индикатор
-        switch (rightState) {
-            case 'on':
-                rightIndicator.className = "indicator right green";
-                break;
-            case 'off':
-                rightIndicator.className = "indicator right red";
-                break;
-            case 'error':
-                rightIndicator.className = "indicator right yellow";
-                break;
-        }
-    }
-
-    // Обработчики кнопок для левого индикатора
-    document.getElementById('left-on').addEventListener('click', () => {
-        leftState='on';
-        updateIndicators();
-    });
-    document.getElementById('left-off').addEventListener('click', () => {
-        leftState='off';
-        updateIndicators();
-    });
-    document.getElementById('left-err').addEventListener('click', () => {
-        leftState='error';
-        updateIndicators();
-    });
-
-    // Обработчики кнопок для правого индикатора
-    document.getElementById('right-on').addEventListener('click', () => {
-        rightState='on';
-        updateIndicators();
-    });
-    document.getElementById('right-off').addEventListener('click', () => {
-        rightState='off';
-        updateIndicators();
-    });
-    document.getElementById('right-err').addEventListener('click', () => {
-        rightState='error';
-        updateIndicators();
-    });
-
-    // Изначально обновим состояние
-    const canvas = document.getElementById('conveyor');
-    const ctx = canvas.getContext('2d');
-
-    const conveyorColor = '#00aa00'; // Цвет конвейера
-    const conveyorHeight = 40; // Высота полосы
-    const speed = 2; // Скорость движения
-
-    let offsetX = 0; // Смещение для анимации
-
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        // Рисуем длинную полоску, которая движется
-        ctx.fillStyle = conveyorColor;
-
-        // Вычисляем длину полосы так, чтобы она повторялась
-        const patternLength = 200; // длина повторяющегося паттерна
-
-        // Смещение для эффекта движения
-        offsetX += speed;
-        if (offsetX > patternLength) {
-            offsetX -= patternLength;
-        }
-
-        // Рисуем два прямоугольника для бесшовного эффекта
-        ctx.fillRect(-offsetX, (canvas.height - conveyorHeight) / 2, patternLength, conveyorHeight);
-        ctx.fillRect(patternLength - offsetX, (canvas.height - conveyorHeight) / 2, patternLength, conveyorHeight);
-
-        requestAnimationFrame(animate);
-    }
-
-    animate();
 </script>
 
 
