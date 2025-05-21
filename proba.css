@@ -353,21 +353,14 @@
     border: 1px solid #333;
 }
 
-img{
-    position: relative;
-    width: 220px;
-    height: 350px;
-    bottom: 600px;
-    left: 1650px;
-}
 
-div.venchik{
+div.employee{
     img{
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        left: 198px;
-        bottom: 620px;
+        position:absolute;
+        width: 220px;
+        height: 350px;
+        top: 450px;
+        left: 1650px;
     }
 }
 
@@ -400,4 +393,343 @@ div.venchik{
     .rectangle25{
         bottom: 644px;
     }
+}
+.conveyor-belt {
+    position: relative;
+    height: 60px;
+    margin: 15px 0;
+    overflow: hidden;
+    border-radius: 3px;
+    bottom: 677px;
+}
+
+/* Полосы конвейера с анимацией */
+.conveyor-belt::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: repeating-linear-gradient(
+            90deg,
+            #ff9362 0px,
+            #ff9362 15px,
+            rgb(255, 239, 237) 15px,
+            rgb(255, 239, 237) 30px
+    );
+    animation: moveBelt 35s linear infinite;
+}
+
+/* Цветовые состояния */
+.conveyor-belt.working::before { background-color: #2ecc71; }
+.conveyor-belt.stopped::before {
+    animation-play-state: paused;
+    background-color: #f1c40f;
+}
+.conveyor-belt.error::before {
+    animation: beltError 0.5s infinite alternate;
+    background-color: #e74c3c;
+}
+
+/* Анимация движения ленты */
+@keyframes moveBelt {
+    100% { transform: translateX(0); }
+    0% { transform: translateX(-50%); }
+}
+
+/* Анимация аварийного мигания */
+@keyframes beltError {
+    from { opacity: 1; }
+    to { opacity: 0.3; }
+}
+
+/* Дополнительные элементы */
+
+
+.roller-left { left: -12px; top: -3px; }
+.roller-right { right: -12px; top: -3px; }
+#image-container {
+    position: relative;
+    left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    transition: all 2s;
+
+}
+img {
+    width: 37px; /* Ограничиваем размер изображения */
+    height: 37px; /* Сохраняем пропорции */
+    top:100px;
+    left:25px;
+
+}
+
+.ingredients1{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 450px;
+}
+
+.ingredients2{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 390px;
+}
+
+.ingredients3{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 330px;
+}
+
+.mixer1{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 450px;
+    left: 225px;
+}
+
+.mixer2{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 390px;
+    left: 225px;
+}
+
+.mixer3{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 330px;
+    left: 225px;
+}
+
+.one{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 450px;
+    left: 450px;
+}
+
+.two{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 390px;
+    left: 450px;
+}
+
+.three{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 330px;
+    left: 450px;
+}
+
+.molding1{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 450px;
+    left: 675px;
+}
+
+.molding2{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 390px;
+    left: 675px;
+}
+
+.molding3{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 330px;
+    left: 675px;
+}
+
+.cooling1{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 450px;
+    left: 900px;
+}
+
+.cooling2{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 390px;
+    left: 900px;
+}
+
+.cooling3{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 330px;
+    left: 900px;
+}
+
+.onee{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 450px;
+    left: 1125px;
+}
+
+.twoo{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 390px;
+    left: 1125px;
+}
+
+.threee{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 330px;
+    left: 1125px;
+}
+
+.drying1{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 450px;
+    left: 1350px;
+}
+
+.drying2{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 390px;
+    left: 1350px;
+}
+
+.drying3{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 330px;
+    left: 1350px;
+}
+
+.packaging1{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 240px;
+    left: 560px;
+}
+
+.packaging2{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 180px;
+    left: 560px;
+}
+
+.packaging3{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 120px;
+    left: 560px;
+}
+
+.sticker1{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 240px;
+    left: 790px;
+}
+
+.sticker2{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 180px;
+    left: 790px;
+}
+
+.sticker3{
+    position: absolute;
+    background-color: #ED7914;
+    border: 1px solid #000000;
+    width: 150px;
+    height: 30px;
+    bottom: 120px;
+    left: 790px;
 }
