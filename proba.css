@@ -524,34 +524,34 @@ img {
     left: 225px;
 }
 
-.one{
+.preparation1{
     position: absolute;
     background-color: #ED7914;
     border: 1px solid #000000;
-    width: 150px;
+    width: 190px;
     height: 30px;
     bottom: 450px;
-    left: 450px;
+    left: 430px;
 }
 
-.two{
+.preparation2{
     position: absolute;
     background-color: #ED7914;
     border: 1px solid #000000;
-    width: 150px;
+    width: 200px;
     height: 30px;
     bottom: 390px;
-    left: 450px;
+    left: 425px;
 }
 
-.three{
+.preparation3{
     position: absolute;
     background-color: #ED7914;
     border: 1px solid #000000;
-    width: 150px;
+    width: 210px;
     height: 30px;
     bottom: 330px;
-    left: 450px;
+    left: 420px;
 }
 
 .molding1{
@@ -614,7 +614,7 @@ img {
     left: 900px;
 }
 
-.onee{
+.remove1{
     position: absolute;
     background-color: #ED7914;
     border: 1px solid #000000;
@@ -624,7 +624,7 @@ img {
     left: 1125px;
 }
 
-.twoo{
+.remove2{
     position: absolute;
     background-color: #ED7914;
     border: 1px solid #000000;
@@ -634,14 +634,14 @@ img {
     left: 1125px;
 }
 
-.threee{
+.remove3{
     position: absolute;
     background-color: #ED7914;
     border: 1px solid #000000;
-    width: 150px;
+    width: 170px;
     height: 30px;
     bottom: 330px;
-    left: 1125px;
+    left: 1115px;
 }
 
 .drying1{
