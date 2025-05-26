@@ -5,9 +5,33 @@
     <title>Title</title>
     <link
             rel="stylesheet"
-            href="proba.css"
+            href="test2.css"
     >
 </head>
+<style>
+    /* Стиль для плавного вращения */
+    #rotating-image {
+       position: absolute;
+        width: 25px;
+        height: auto;
+        display: block;
+        margin-top: 20px;
+        left: 210px;
+        top:250px;
+
+        /* по умолчанию без анимации */
+    }
+
+    /* Класс для бесконечного вращения с ускорением */
+    .spin {
+        animation: spinAnimation 0.3s linear infinite; /* ускорено до 1 секунды */
+    }
+
+    @keyframes spinAnimation {
+        from { transform: rotateY(0deg); }
+        to { transform: rotateY(360deg); }
+    }
+</style>
 <body class="body">
 
 <div class="container">
@@ -61,23 +85,11 @@
 <div class="conveyor-belt working"></div>
 <div class="conveyor-roller roller-left"></div>
 <div class="conveyor-roller roller-right"></div>
-<div class="employee"><img src="img/employee.jpg" /></div>
+<div class="employee"><img src="img/employee.png" /></div>
 
 <!-- Контейнер для индикаторов -->
 
-<script>
-    let arr = ['img/b.png', "img/o.png","img/g.png", "img/buttom.png",'img/b.png', "img/o.png", "img/o.png", "img/buttom.png", "img/o.png" ];
-    let arrPos = [0, 101,202, 303, 353,403, 650, 905, 1021, 1116,1210 ];
-    let i = 1;
-    function changeSrc() {
-        const img = document.getElementById("image-container");
-        img.src = arr[i];
-        img.style.left = arrPos[i] + 'px';
-        i++;
-        if(i >= arr.length) i=0;
-    }
-    setInterval(changeSrc, 3000);
-</script>
+
 
 <div>
     <button class="ingredients1" id="ing-nts1" onclick="ingredients1()">ингредиенты: вкл</button>
@@ -85,7 +97,7 @@
     <button class="ingredients3" id="ing-nts3" onclick="ingredients3()">ингредиенты: авария</button>
 </div>
 
-<div>
+<div style="margin-top: 20px">
     <button class="mixer1" id="mix1" onclick="mixer1()">смеситель: вкл</button>
     <button class="mixer2" id="mix2" onclick="mixer2()">смеситель: стоп</button>
     <button class="mixer3" id="mix3" onclick="mixer3()">смеситель: авария</button>
@@ -133,5 +145,75 @@
     <button class="sticker3" id="st-er3" onclick="sticker3()">стикер: авария</button>
 </div>
 
+<body class="body">
+
+<div class="container">
+    <!-- ваши блоки -->
+</div>
+
+<!-- остальные блоки и элементы -->
+
+<!-- Статус и изображение смесителя -->
+<div style="margin-top:20px;">
+    <h3 id='indicator'>Статус: Остановлено</h3>
+</div>
+
+<img id='rotating-image' src='img/Group%206.svg' alt='Картинка смесителя' />
+
+<!-- Кнопки управления смесителем -->
+
+
+
+<script>
+    const mixerStates = {
+        on: {
+            imgSrc: "img/Group%206.svg",
+            indicatorText: "Статус: Включен",
+            spinning: true
+        },
+        stop: {
+            imgSrc: "img/Group%206.svg",
+            indicatorText: "Статус: Остановлено",
+            spinning: false
+        },
+        error: {
+            imgSrc: "img/Group%206.svg",
+            indicatorText: "Статус: Авария",
+            spinning: false
+        }
+    };
+
+    const imgElement = document.getElementById('rotating-image');
+    const indicator = document.getElementById('indicator');
+
+    function updateStatus(status) {
+        if (imgElement && indicator && mixerStates[status]) {
+            // меняем изображение
+            imgElement.src = mixerStates[status].imgSrc;
+            // обновляем текст статуса
+            indicator.innerText = mixerStates[status].indicatorText;
+
+            // управляем классом вращения
+            if (mixerStates[status].spinning) {
+                imgElement.classList.add('spin');
+            } else {
+                imgElement.classList.remove('spin');
+                // сбрасываем трансформ, чтобы не было накопления
+                imgElement.style.transform = '';
+                // также сбрасываем угол вращения, чтобы при следующем включении было с нуля
+                rotationY = 0;
+            }
+        }
+    }
+
+    function mixer1() { updateStatus('on'); }
+    function mixer2() { updateStatus('stop'); }
+    function mixer3() { updateStatus('error'); }
+
+    // Изначально устанавливаем состояние по умолчанию
+    window.onload = () => {
+        updateStatus('stop');
+    };
+</script>
 </body>
 </html>
