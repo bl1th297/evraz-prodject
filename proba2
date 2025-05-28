@@ -89,9 +89,7 @@
 <div class="conveyor-belt working"></div>
 <div class="conveyor-roller roller-left"></div>
 <div class="conveyor-roller roller-right"></div>
-<div class="employee"><img src="img/employee.png"/></div>
-
-<!-- Контейнер для индикаторов -->
+<div class="employee"><img src="img/employee.png" /></div>
 
 
 <div>
@@ -100,7 +98,7 @@
     <button class="ingredients3" id="ing-nts3" onclick="ingredients3()">ингредиенты: авария</button>
 </div>
 
-<div style="margin-top: 20px">
+<div>
     <button class="mixer1" id="mix1" onclick="mixer1()">смеситель: вкл</button>
     <button class="mixer2" id="mix2" onclick="mixer2()">смеситель: стоп</button>
     <button class="mixer3" id="mix3" onclick="mixer3()">смеситель: авария</button>
@@ -148,39 +146,41 @@
     <button class="sticker3" id="st-er3" onclick="sticker3()">стикер: авария</button>
 </div>
 
-<body class="body">
-
-<div class="container">
-    <!-- ваши блоки -->
-</div>
-
-<!-- остальные блоки и элементы -->
-
-<!-- Статус и изображение смесителя -->
-<div style="margin-top:20px;">
-    <h3 id='indicator'></h3>
-</div>
-<img id='rotating-image' src='img/Group%206.svg' alt='Картинка смесителя'/>
-
-<!-- Кнопки управления смесителем -->
 <img id="image-container" src="img/b.png">
-
-
+<div id='indicator'> </div>
+<!-- Контейнер для индикаторов -->
+<img id='rotating-image' src="img/venchik.svg" alt='Картинка смесителя'/>
 <script>
+    let arr = ["img/b.png", "img/o.png","img/g.png", "img/buttom.png","img/b.png", "img/o.png", "img/o.png", "img/buttom.png", "img/o.png","img/g.png","img/b.png", "img/buttom.png", "img/o.png" ];
+    let arrPos = [50, 60,202, 350, 480, 610, 680, 900, 1190, 1360, 1515, 1680, 1850];
+    let i = 1;
+    function changeSrc() {
+        const img = document.getElementById("image-container");
+        img.src = arr[i];
+        img.style.left = arrPos[i] + 'px';
+        i++;
+        if(i >= arr.length) i=0;
+    }
+
+    setInterval(changeSrc, 5000);
+
+
+
+
+
     const mixerStates = {
         on: {
             imgSrc: "img/Group%206.svg",
-            indicatorText: "Статус: Включен",
+
             spinning: true
         },
         stop: {
             imgSrc: "img/Group%206.svg",
-            indicatorText: "Статус: Остановлено",
+
             spinning: false
         },
         error: {
             imgSrc: "img/Group%206.svg",
-            indicatorText: "Статус: Авария",
             spinning: false
         }
     };
@@ -193,7 +193,7 @@
             // меняем изображение
             imgElement.src = mixerStates[status].imgSrc;
             // обновляем текст статуса
-            indicator.innerText = mixerStates[status].indicatorText;
+
 
             // управляем классом вращения
             if (mixerStates[status].spinning) {
@@ -224,19 +224,9 @@
     // Изначально устанавливаем состояние по умолчанию
     window.onload = () => {
         updateStatus('stop');
-        let arr = ["img/b.png", "img/o.png","img/g.png", "img/buttom.png","img/b.png", "img/o.png", "img/o.png", "img/buttom.png", "img/o.png","img/g.png","img/b.png", "img/buttom.png", "img/o.png" ];
-        let arrPos = [50, 60,202, 350, 480, 610, 680, 900, 1190, 1360, 1515, 1680, 1850];
-        let i = 1;
-        function changeSrc() {
-            const img = document.getElementById("image-container");
-            img.src = arr[i];
-            img.style.left = arrPos[i] + 'px';
-            i++;
-            if(i >= arr.length) i=0;
-        }
-        setInterval(changeSrc, 3000);
-    
-        };
+    }
 </script>
+
+
 </body>
 </html>
