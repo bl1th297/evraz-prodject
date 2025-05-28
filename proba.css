@@ -421,50 +421,10 @@ div.employee{
     animation: moveBelt 35s linear infinite;
 }
 
-/* Цветовые состояния */
-.conveyor-belt.working::before { background-color: #2ecc71; }
-.conveyor-belt.stopped::before {
-    animation-play-state: paused;
-    background-color: #f1c40f;
-}
-.conveyor-belt.error::before {
-    animation: beltError 0.5s infinite alternate;
-    background-color: #e74c3c;
-}
-
 /* Анимация движения ленты */
 @keyframes moveBelt {
     100% { transform: translateX(0); }
     0% { transform: translateX(-50%); }
-}
-
-/* Анимация аварийного мигания */
-@keyframes beltError {
-    from { opacity: 1; }
-    to { opacity: 0.3; }
-}
-
-/* Дополнительные элементы */
-
-
-.roller-left { left: -12px; top: -3px; }
-.roller-right { right: -12px; top: -3px; }
-#image-container {
-    position: relative;
-    left: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    transition: all 2s;
-
-}
-img {
-    width: 37px; /* Ограничиваем размер изображения */
-    height: 37px; /* Сохраняем пропорции */
-    top:100px;
-    left:25px;
-
 }
 
 .ingredients1{
