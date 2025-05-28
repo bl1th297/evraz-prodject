@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <link
-          rel="stylesheet"
-          href="test2.css"
-  >
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link
+            rel="stylesheet"
+            href="test2.css"
+    >
 </head>
+<style>
+    /* Стиль для плавного вращения */
+    #rotating-image {
+        position: absolute;
+        width: 25px;
+        height: auto;
+        display: block;
+        margin-top: 20px;
+        left: 210px;
+        top: 250px;
+
+        /* по умолчанию без анимации */
+    }
+
+    /* Класс для бесконечного вращения с ускорением */
+    .spin {
+        animation: spinAnimation 0.3s linear infinite; /* ускорено до 1 секунды */
+    }
+
+    @keyframes spinAnimation {
+        from {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+</style>
 <body class="body">
 
-
-
 <div class="container">
-  <div class="rectangle2"></div> <!--первый большой блок (подготовка сырья) -->
-  <div class="rectangle3"></div> <!--второй большой блок (смешивание) -->
-  <div class="rectangle4"></div> <!--третий большой блок (???)-->
-  <div class="rectangle5"></div> <!--первый средний блок (выкидывание форм) -->
-  <div class="rectangle6"></div> <!-- большой тунель охлаждения-->
-  <div class="rectangle8"></div> <!--четвертый большой блок (избавление от формы) -->
-  <div class="rectangle9"></div> <!--маленький тунель сушки-->
-  <div class="rectangle16"></div> <!--пятый большой блок (упаковка)-->
-  <div class="rectangle17"></div> <!--шестой большой блок (наклейка)-->
+    <div class="rectangle2"></div> <!--первый большой блок (подготовка сырья) -->
+    <div class="rectangle3"></div> <!--второй большой блок (смешивание) -->
+    <div class="rectangle4"></div> <!--третий большой блок (???)-->
+    <div class="rectangle5"></div> <!--первый средний блок (выкидывание форм) -->
+    <div class="rectangle6"></div> <!-- большой тунель охлаждения-->
+    <div class="rectangle8"></div> <!--четвертый большой блок (избавление от формы) -->
+    <div class="rectangle9"></div> <!--маленький тунель сушки-->
+    <div class="rectangle16"></div> <!--пятый большой блок (упаковка)-->
+    <div class="rectangle17"></div> <!--шестой большой блок (наклейка)-->
 </div>
+
 <div class="rectangle7"></div> <!--маленький блок (заморозка)-->
 <div class="rectangle10"></div> <!--маленький блок (сушка)-->
 
@@ -53,51 +80,165 @@
 <div class="button-red9"></div> <!--шестой большой блок (наклейка)-->
 
 <div class="stage">
-  <div class="tunnel">
-    <div class="snowflake" style="left: 800px;">❄️</div>
-    <div class="snowflake" style="left: 1050px;">❄️</div>
-  </div>
-  <div class="conveyor-line working"></div>
+    <div class="tunnel">
+        <div class="snowflake" style="left: 800px;">❄️</div>
+        <div class="snowflake" style="left: 1050px;">❄️</div>
+    </div>
+    <div class="conveyor-line working"></div>
 </div>
 <div class="conveyor-belt working"></div>
-  <div class="conveyor-roller roller-left"></div>
-  <div class="conveyor-roller roller-right"></div>
-<div class="employee"><img src="img/employee.png" /></div>
+<div class="conveyor-roller roller-left"></div>
+<div class="conveyor-roller roller-right"></div>
+<div class="employee"><img src="img/employee.png"/></div>
+
+<!-- Контейнер для индикаторов -->
 
 
-  <img id="image-container" src="img/b.png">
+<div>
+    <button class="ingredients1" id="ing-nts1" onclick="ingredients1()">ингредиенты: вкл</button>
+    <button class="ingredients2" id="ing-nts2" onclick="ingredients2()">ингредиенты: стоп</button>
+    <button class="ingredients3" id="ing-nts3" onclick="ingredients3()">ингредиенты: авария</button>
+</div>
+
+<div style="margin-top: 20px">
+    <button class="mixer1" id="mix1" onclick="mixer1()">смеситель: вкл</button>
+    <button class="mixer2" id="mix2" onclick="mixer2()">смеситель: стоп</button>
+    <button class="mixer3" id="mix3" onclick="mixer3()">смеситель: авария</button>
+</div>
+
+<div>
+    <button class="preparation1" id="prep-on1" onclick="preparation1()">подготовка к формовке: вкл</button>
+    <button class="preparation2" id="prep-on2" onclick="preparation2()">подготовка к формовке: стоп</button>
+    <button class="preparation3" id="prep-on3" onclick="preparation3()">подготовка к формовке: авария</button>
+</div>
+
+<div>
+    <button class="molding1" id="mol-ng1" onclick="molding1()">формовка: вкл</button>
+    <button class="molding2" id="mol-ng2" onclick="molding2()">формовка: стоп</button>
+    <button class="molding3" id="mol-ng3" onclick="molding3()">формовка: авария</button>
+</div>
+
+<div>
+    <button class="cooling1" id="cool-ng1" onclick="cooling1()">охлаждение: вкл</button>
+    <button class="cooling2" id="cool-ng2" onclick="cooling2()">охлаждение: стоп</button>
+    <button class="cooling3" id="cool-ng3" onclick="cooling3()">охлаждение: авария</button>
+</div>
+
+<div>
+    <button class="remove1" id="rem-ve1" onclick="remove1()">убирание форм: вкл</button>
+    <button class="remove2" id="rem-ve2" onclick="remove2()">убирание форм: стоп</button>
+    <button class="remove3" id="rem-ve3" onclick="remove3()">убирание форм: авария</button>
+</div>
+
+<div>
+    <button class="drying1" id="dry-ng1" onclick="drying1()">сушка: вкл</button>
+    <button class="drying2" id="dry-ng2" onclick="drying2()">сушка: стоп</button>
+    <button class="drying3" id="dry-ng3" onclick="drying3()">сушка: авария</button>
+</div>
+
+<div>
+    <button class="packaging1" id="pack-ng1" onclick="packaging1()">упаквока: вкл</button>
+    <button class="packaging2" id="pack-ng2" onclick="packaging2()">упаковка: стоп</button>
+    <button class="packaging3" id="pack-ng3" onclick="packaging3()">упаковка: авария</button>
+</div>
+
+<div>
+    <button class="sticker1" id="st-er1" onclick="sticker1()">стикер: вкл</button>
+    <button class="sticker2" id="st-er2" onclick="sticker2()">стикер: стоп</button>
+    <button class="sticker3" id="st-er3" onclick="sticker3()">стикер: авария</button>
+</div>
+
+<body class="body">
+
+<div class="container">
+    <!-- ваши блоки -->
+</div>
+
+<!-- остальные блоки и элементы -->
+
+<!-- Статус и изображение смесителя -->
+<div style="margin-top:20px;">
+    <h3 id='indicator'></h3>
+</div>
+<img id='rotating-image' src='img/Group%206.svg' alt='Картинка смесителя'/>
+
+<!-- Кнопки управления смесителем -->
+<img id="image-container" src="img/b.png">
 
 
-  <!-- Контейнер для индикаторов -->
+<script>
+    const mixerStates = {
+        on: {
+            imgSrc: "img/Group%206.svg",
+            indicatorText: "Статус: Включен",
+            spinning: true
+        },
+        stop: {
+            imgSrc: "img/Group%206.svg",
+            indicatorText: "Статус: Остановлено",
+            spinning: false
+        },
+        error: {
+            imgSrc: "img/Group%206.svg",
+            indicatorText: "Статус: Авария",
+            spinning: false
+        }
+    };
 
-  <script>
-    let arr = ['img/b.png', "img/o.png","img/g.png", "img/buttom.png",'img/b.png', "img/o.png", "img/o.png", "img/buttom.png", "img/o.png" ];
-    let arrPos = [0, 101,202, 303, 353,403, 650, 905, 1021, 1116,1210 ];
-    let i = 1;
-    function changeSrc() {
-      const img = document.getElementById("image-container");
-      img.src = arr[i];
-      img.style.left = arrPos[i] + 'px';
-      i++;
-      if(i >= arr.length) i=0;
+    const imgElement = document.getElementById('rotating-image');
+    const indicator = document.getElementById('indicator');
+
+    function updateStatus(status) {
+        if (imgElement && indicator && mixerStates[status]) {
+            // меняем изображение
+            imgElement.src = mixerStates[status].imgSrc;
+            // обновляем текст статуса
+            indicator.innerText = mixerStates[status].indicatorText;
+
+            // управляем классом вращения
+            if (mixerStates[status].spinning) {
+                imgElement.classList.add('spin');
+            }
+            else {
+                imgElement.classList.remove('spin');
+                // сбрасываем трансформ, чтобы не было накопления
+                imgElement.style.transform = '';
+                // также сбрасываем угол вращения, чтобы при следующем включении было с нуля
+                rotationY = 0;
+            }
+        }
     }
-    setInterval(changeSrc, 3000);
 
+    function mixer1() {
+        updateStatus('on');
+    }
 
+    function mixer2() {
+        updateStatus('stop');
+    }
 
-  </script>
+    function mixer3() {
+        updateStatus('error');
+    }
 
+    // Изначально устанавливаем состояние по умолчанию
+    window.onload = () => {
+        updateStatus('stop');
+        let arr = ['img/b.png', "img/o.png", "img/g.png", "img/buttom.png", 'img/b.png', "img/o.png", "img/o.png", "img/buttom.png", "img/o.png"];
+        let arrPos = [0, 190, 370, 540, 353, 403, 650, 905, 1021, 1116, 1210];
+        let i = 1;
 
+        function changeSrc() {
+            const img = document.getElementById("image-container");
+            img.src = arr[i];
+            img.style.left = arrPos[i] + 'px';
+            i++;
+            if (i >= arr.length) i = 0;
+        }
 
-  </script>
+        setInterval(changeSrc, 3000);
 
-
-
-
-
-
-
-
-
+    };
+</script>
 </body>
 </html>
