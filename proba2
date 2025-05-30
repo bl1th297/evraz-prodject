@@ -1,747 +1,157 @@
-.body {
-    background-color: #F7E4D3;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link
+            rel="stylesheet"
+            href="test2.css"
+    >
+</head>
+<style>
+    /* Стиль для плавного вращения */
+    #rotating-image {
+        position: absolute;
+        width: 25px;
+        height: auto;
+        display: block;
+        margin-top: 20px;
+        left: 210px;
+        top: 250px;
 
-.container {
-    width: 100%;
-    height: 320px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-
-.rectangle1 {
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #585858;
-    position: absolute;
-    top: 360px;
-}
-
-.rectangle2 {
-    position: relative; /* Для позиционирования круга относительно прямоугольника */
-    width: 100px;
-    height: 200px;
-    background-color: #ED7914;
-    border: 2px solid #333;
-    margin: 20px;
-}
-
-.rectangle3 {
-    position: relative; /* Для позиционирования круга относительно прямоугольника */
-    width: 100px;
-    height: 200px;
-    background-color: #ED7914;
-    border: 2px solid #333;
-    margin: 20px;
-
-}
-
-.rectangle4{
-    position: relative; /* Для позиционирования круга относительно прямоугольника */
-    width: 100px;
-    height: 200px;
-    background-color: #ED7914;
-    border: 2px solid #333;
-    margin: 20px;
-}
-.rectangle5 {
-    position: relative; /* Для позиционирования круга относительно прямоугольника */
-    width: 80px;
-    height: 120px;
-    background-color: #ED7914;
-    border: 2px solid #333;
-    margin: 20px;
-    top:45px;
-}
-
-.rectangle6{
-    position: relative;
-    width: 350px;
-    height: 100px;
-    background-color: rgb(240, 249, 255);
-    border: 1px solid #000000;
-    left: 180px;
-    top: 250px;
-}
-
-.rectangle7{
-    position: relative;
-    width: 40px;
-    height: 40px;
-    background-color: #f0f0f0;
-    border: 2px solid #333;
-    left: 736px;
-    bottom: 70px;
-}
-
-.rectangle8{
-    position: relative; /* Для позиционирования круга относительно прямоугольника */
-    width: 100px;
-    height: 200px;
-    left: 220px;
-    background-color: #ED7914;
-    border: 2px solid #333;
-    margin: 20px;
-
-}
-
-.rectangle9{
-    position: relative;
-    width: 100px;
-    height: 100px;
-    background-color: rgb(255, 239, 237);
-    border: 1px solid #333333;
-    left: 265px;
-    top: 250px;
-}
-
-.rectangle10{
-    position: absolute;
-    width: 35px;
-    height: 35px;
-    background-color: #f0f0f0;
-    border: 2px solid #333;
-    left: 1325px;
-    top: 258px;
-}
-
-.rectangle11{
-    position: relative;
-    background-color: #ff9362;
-    width: 10px;
-    height: 70px;
-    left: 65px;
-    bottom: 140px;
-}
-
-.rectangle12{
-    position: relative;
-    background-color: #ff9362;
-    width: 10px;
-    height: 70px;
-    left: 210px;
-    bottom: 210px;
-}
-
-.rectangle13{
-    position: relative;
-    background-color: #000000;
-    width: 44px;
-    height: 10px;
-    bottom: 410px;
-    left:410px;
-}
-
-.rectangle14 {
-    position: relative;
-    background-color: #ff9362;
-    width: 150px;
-    height: 10px;
-    bottom: 420px;
-    left: 536px;
-}
-
-.rectangle15 {
-    position: relative;
-    background-color: #ff9362;
-    width: 10px;
-    height: 160px;
-    bottom: 430px;
-    left:685px;
-}
-
-.rectangle16 {
-    position: relative; /* Для позиционирования круга относительно прямоугольника */
-    width: 100px;
-    height: 200px;
-    left: 300px;
-    background-color: #ED7914;
-    border: 2px solid #333;
-    margin: 20px;
-}
-
-.rectangle17 {
-    position: relative; /* Для позиционирования круга относительно прямоугольника */
-    width: 100px;
-    height: 200px;
-    left: 330px;
-    background-color: #ED7914;
-    border: 2px solid #333;
-    margin: 20px;
-}
-
-.rectangle18 {
-    position: relative;
-    background-color: #ff9362;
-    width: 90px;
-    height: 10px;
-    bottom: 540px;
-    left: 536px;
-}
-
-.rectangle19 {
-    position: relative;
-    background-color: #ff9362;
-    width: 10px;
-    height: 100px;
-    bottom: 540px;
-    left: 616px;
-}
-
-.rectangle20{
-    position: relative;
-    background-color: #ff9362;
-    width: 10px;
-    height: 70px;
-    left: 353px;
-    bottom: 570px;
-}
-
-.rectangle21{
-    position: absolute;
-    background-color: black;
-    width: 30px;
-    height: 70px;
-    left: 486px;
-    bottom: 680px;
-}
-
-.rectangle22{
-    position: absolute;
-    background-color: black;
-    width: 40px;
-    height: 20px;
-    left: 1187px;
-    bottom: 695px;
-}
-
-.rectangle23{
-    position: relative;
-    background-color: #ff9362;
-    width: 10px;
-    height: 60px;
-    left: 1194px;
-    bottom: 622px;
-}
-
-.rectangle24{
-    position: relative;
-    background-color: #000000;
-    width: 15px;
-    height: 30px;
-    left: 1517px;
-    bottom: 700px;
-}
-
-.rectangle25{
-    position: absolute;
-    background-color: #ff9362;
-    border: 2px solid #000000;
-    width: 65px;
-    height: 45px;
-    left: 1500px;
-    bottom: 635px;
-}
-
-.rectangle26{
-    position: relative;
-    background-color: #ff9362;
-    width: 10px;
-    height: 60px;
-    left: 1675px;
-    bottom: 730px;
-}
-
-.button-red1{
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background: #b10202;
-    border-radius: 50%;
-    top: 35px; /* Смещение на половину размера круга */
-    left: 35px; /* Смещение на половину размера круга */
-    border: 1px solid #333;
-}
-
-.button-red2{
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background: #b10202;
-    border-radius: 50%;
-    top: 35px; /* Смещение на половину размера круга */
-    left: 180px; /* Смещение на половину размера круга */
-    border: 1px solid #333;
-}
-
-.button-red3{
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background: #b10202;
-    border-radius: 50%;
-    top: 35px; /* Смещение на половину размера круга */
-    left: 325px; /* Смещение на половину размера круга */
-    border: 1px solid #333;
-}
-
-.button-red4{
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background: #b10202;
-    border-radius: 50%;
-    top: 80px; /* Смещение на половину размера круга */
-    left: 470px; /* Смещение на половину размера круга */
-    border: 1px solid #333;
-}
-
-.button-red5{
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background: #b10202;
-    border-radius: 50%;
-    top: 267px; /* Смещение на половину размера круга */
-    left: 752px; /* Смещение на половину размера круга */
-    border: 1px solid #333;
-}
-
-.button-red6{
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background: #b10202;
-    border-radius: 50%;
-    top: 35px; /* Смещение на половину размера круга */
-    left: 1165px; /* Смещение на половину размера круга */
-    border: 1px solid #333;
-}
-
-.button-red7{
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background: #b10202;
-    border-radius: 50%;
-    top: 264px; /* Смещение на половину размера круга */
-    left: 1331px; /* Смещение на половину размера круга */
-    border: 1px solid #333;
-}
-
-.button-red8{
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background: #b10202;
-    border-radius: 50%;
-    top: 35px; /* Смещение на половину размера круга */
-    left: 1490px; /* Смещение на половину размера круга */
-    border: 1px solid #333;
-}
-
-.button-red9{
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background: #b10202;
-    border-radius: 50%;
-    top: 35px; /* Смещение на половину размера круга */
-    left: 1665px; /* Смещение на половину размера круга */
-    border: 1px solid #333;
-}
-
-
-div.employee{
-    img{
-        position:absolute;
-        width: 220px;
-        height: 350px;
-        top: 450px;
-        left: 1650px;
+        /* по умолчанию без анимации */
     }
-}
 
-.nozzle {
-    width: 30px;
-    height: 30px;
-    background: #3498db;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-}
-
-.snowflake {
-    position: absolute;
-    animation: blink 1s infinite;
-    font-size: 15px;
-    bottom: 663px;
-
-}
-
-@keyframes blink {
-    50% { opacity: 0.3; }
-}
-
-@media (max-width: 2800px) {
-    .rectangle21{
-        bottom: 687px;
+    /* Класс для бесконечного вращения с ускорением */
+    .spin {
+        animation: spinAnimation 0.3s linear infinite; /* ускорено до 1 секунды */
     }
-    .rectangle22{
-        bottom: 703px;
+
+    @keyframes spinAnimation {
+        from {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: rotateY(360deg);
+        }
     }
-    .rectangle25{
-        bottom: 644px;
-    }
-}
-.conveyor-belt {
-    position: relative;
-    height: 60px;
-    margin: 15px 0;
-    overflow: hidden;
-    border-radius: 3px;
-    bottom: 677px;
-}
+</style>
+<body class="body">
 
-/* Полосы конвейера с анимацией */
-.conveyor-belt::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    background: repeating-linear-gradient(
-            90deg,
-            #ff9362 0px,
-            #ff9362 15px,
-            rgb(255, 239, 237) 15px,
-            rgb(255, 239, 237) 30px
-    );
-    animation: moveBelt 35s linear infinite;
-}
+<div class="container">
+    <div class="rectangle2"></div> <!--первый большой блок (подготовка сырья) -->
+    <div class="rectangle3"></div> <!--второй большой блок (смешивание) -->
+    <div class="rectangle4"></div> <!--третий большой блок (???)-->
+    <div class="rectangle5"></div> <!--первый средний блок (выкидывание форм) -->
+    <div class="rectangle6"></div> <!-- большой тунель охлаждения-->
+    <div class="rectangle8"></div> <!--четвертый большой блок (избавление от формы) -->
+    <div class="rectangle9"></div> <!--маленький тунель сушки-->
+    <div class="rectangle16"></div> <!--пятый большой блок (упаковка)-->
+    <div class="rectangle17"></div> <!--шестой большой блок (наклейка)-->
+</div>
 
-/* Цветовые состояния */
-.conveyor-belt.working::before { background-color: #2ecc71; }
-.conveyor-belt.stopped::before {
-    animation-play-state: paused;
-    background-color: #f1c40f;
-}
-.conveyor-belt.error::before {
-    animation: beltError 0.5s infinite alternate;
-    background-color: #e74c3c;
-}
+<div class="rectangle7"></div> <!--маленький блок (заморозка)-->
+<div class="rectangle10"></div> <!--маленький блок (сушка)-->
 
-/* Анимация движения ленты */
-@keyframes moveBelt {
-    100% { transform: translateX(0); }
-    0% { transform: translateX(-50%); }
-}
+<div class="rectangle21"></div> <!-- (формы) -->
+<div class="rectangle22"></div> <!-- (убирание форм) -->
+<div class="rectangle25"></div> <!--(упаквока)-->
 
-/* Анимация аварийного мигания */
-@keyframes beltError {
-    from { opacity: 1; }
-    to { opacity: 0.3; }
-}
+<div class="rectangle11"></div> <!--???-->
+<div class="rectangle12"></div> <!--???-->
+<div class="rectangle13"></div> <!--???-->
+<div class="rectangle14"></div> <!--???-->
+<div class="rectangle15"></div> <!--???-->
+<div class="rectangle18"></div> <!--???-->
+<div class="rectangle19"></div> <!--???-->
+<div class="rectangle20"></div> <!--???-->
+<div class="rectangle23"></div> <!--???-->
+<div class="rectangle24"></div> <!--???-->
+<div class="rectangle26"></div> <!--???-->
 
-/* Дополнительные элементы */
+<div class="button-red1"></div> <!--первый большой блок (подготовка сырья) -->
+<div class="button-red2"></div> <!--второй большой блок (смешивание) -->
+<div class="button-red3"></div> <!--третий большой блок (???)-->
+<div class="button-red4"></div> <!--первый средний блок (выкидывание форм) -->
+<div class="button-red5"></div> <!-- большой тунель охлаждения-->
+<div class="button-red6"></div> <!--четвертый большой блок (избавление от формы) -->
+<div class="button-red7"></div> <!--маленький тунель сушки-->
+<div class="button-red8"></div> <!--пятый большой блок (упаковка)-->
+<div class="button-red9"></div> <!--шестой большой блок (наклейка)-->
+
+<div class="stage">
+    <div class="tunnel">
+        <div class="snowflake" style="left: 800px;">❄️</div>
+        <div class="snowflake" style="left: 1050px;">❄️</div>
+    </div>
+    <div class="conveyor-line working"></div>
+</div>
+<div class="conveyor-belt working"></div>
+<div class="conveyor-roller roller-left"></div>
+<div class="conveyor-roller roller-right"></div>
+<div class="employee"><img src="img/employee.png" /></div>
 
 
-.roller-left { left: -12px; top: -3px; }
-.roller-right { right: -12px; top: -3px; }
-#image-container {
-    position: relative;
-    left: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    transition: all 2s;
+<div>
+    <button class="ingredients1" id="ing-nts1" onclick="ingredients1()">ингредиенты: вкл</button>
+    <button class="ingredients2" id="ing-nts2" onclick="ingredients2()">ингредиенты: стоп</button>
+    <button class="ingredients3" id="ing-nts3" onclick="ingredients3()">ингредиенты: авария</button>
+</div>
 
-}
-img {
-    width: 37px; /* Ограничиваем размер изображения */
-    height: 37px; /* Сохраняем пропорции */
-    top:100px;
-    left:25px;
+<div>
+    <button class="mixer1" id="mix1" onclick="mixer1()">смеситель: вкл</button>
+    <button class="mixer2" id="mix2" onclick="mixer2()">смеситель: стоп</button>
+    <button class="mixer3" id="mix3" onclick="mixer3()">смеситель: авария</button>
+</div>
 
-}
+<div>
+    <button class="preparation1" id="prep-on1" onclick="preparation1()">подготовка к формовке: вкл</button>
+    <button class="preparation2" id="prep-on2" onclick="preparation2()">подготовка к формовке: стоп</button>
+    <button class="preparation3" id="prep-on3" onclick="preparation3()">подготовка к формовке: авария</button>
+</div>
 
-.ingredients1{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 450px;
-}
+<div>
+    <button class="molding1" id="mol-ng1" onclick="molding1()">формовка: вкл</button>
+    <button class="molding2" id="mol-ng2" onclick="molding2()">формовка: стоп</button>
+    <button class="molding3" id="mol-ng3" onclick="molding3()">формовка: авария</button>
+</div>
 
-.ingredients2{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 390px;
-}
+<div>
+    <button class="cooling1" id="cool-ng1" onclick="cooling1()">охлаждение: вкл</button>
+    <button class="cooling2" id="cool-ng2" onclick="cooling2()">охлаждение: стоп</button>
+    <button class="cooling3" id="cool-ng3" onclick="cooling3()">охлаждение: авария</button>
+</div>
 
-.ingredients3{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 330px;
-}
+<div>
+    <button class="remove1" id="rem-ve1" onclick="remove1()">убирание форм: вкл</button>
+    <button class="remove2" id="rem-ve2" onclick="remove2()">убирание форм: стоп</button>
+    <button class="remove3" id="rem-ve3" onclick="remove3()">убирание форм: авария</button>
+</div>
 
-.mixer1{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 450px;
-    left: 225px;
-}
+<div>
+    <button class="drying1" id="dry-ng1" onclick="drying1()">сушка: вкл</button>
+    <button class="drying2" id="dry-ng2" onclick="drying2()">сушка: стоп</button>
+    <button class="drying3" id="dry-ng3" onclick="drying3()">сушка: авария</button>
+</div>
 
-.mixer2{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 390px;
-    left: 225px;
-}
+<div>
+    <button class="packaging1" id="pack-ng1" onclick="packaging1()">упаквока: вкл</button>
+    <button class="packaging2" id="pack-ng2" onclick="packaging2()">упаковка: стоп</button>
+    <button class="packaging3" id="pack-ng3" onclick="packaging3()">упаковка: авария</button>
+</div>
 
-.mixer3{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 330px;
-    left: 225px;
-}
+<div>
+    <button class="sticker1" id="st-er1" onclick="sticker1()">стикер: вкл</button>
+    <button class="sticker2" id="st-er2" onclick="sticker2()">стикер: стоп</button>
+    <button class="sticker3" id="st-er3" onclick="sticker3()">стикер: авария</button>
+</div>
 
-.preparation1{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 190px;
-    height: 30px;
-    bottom: 450px;
-    left: 430px;
-}
+<img id="image-container" src="img/b.png">
+<div id='indicator'> </div>
+<!-- Контейнер для индикаторов -->
+<img id='rotating-image' src="img/venchik.svg" alt='Картинка смесителя'/>
+<script src="test2.js"></script>
 
-.preparation2{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 200px;
-    height: 30px;
-    bottom: 390px;
-    left: 425px;
-}
 
-.preparation3{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 210px;
-    height: 30px;
-    bottom: 330px;
-    left: 420px;
-}
-
-.molding1{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 450px;
-    left: 675px;
-}
-
-.molding2{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 390px;
-    left: 675px;
-}
-
-.molding3{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 330px;
-    left: 675px;
-}
-
-.cooling1{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 450px;
-    left: 900px;
-}
-
-.cooling2{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 390px;
-    left: 900px;
-}
-
-.cooling3{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 330px;
-    left: 900px;
-}
-
-.remove1{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 450px;
-    left: 1125px;
-}
-
-.remove2{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 390px;
-    left: 1125px;
-}
-
-.remove3{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 170px;
-    height: 30px;
-    bottom: 330px;
-    left: 1115px;
-}
-
-.drying1{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 450px;
-    left: 1350px;
-}
-
-.drying2{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 390px;
-    left: 1350px;
-}
-
-.drying3{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 330px;
-    left: 1350px;
-}
-
-.packaging1{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 240px;
-    left: 560px;
-}
-
-.packaging2{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 180px;
-    left: 560px;
-}
-
-.packaging3{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 120px;
-    left: 560px;
-}
-
-.sticker1{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 240px;
-    left: 790px;
-}
-
-.sticker2{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 180px;
-    left: 790px;
-}
-
-.sticker3{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    bottom: 120px;
-    left: 790px;
-}
-
-#image-container {
-    position: absolute;
-    top: 272px;
-    left: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    transition: all 2s;
-
-}
+</body>
+</html>
