@@ -1,0 +1,81 @@
+let arr = ["img/b.png", "img/o.png","img/g.png", "img/buttom.png","img/b.png", "img/o.png", "img/o.png", "img/buttom.png", "img/o.png","img/g.png","img/b.png", "img/buttom.png", "img/o.png" ];
+let arrPos = [50, 60,202, 350, 480, 610, 680, 900, 1190, 1360, 1515, 1680, 1850];
+let i = 1;
+
+function changeSrc() {
+    const img = document.getElementById("image-container");
+
+    // Перемещаем изображение
+    img.style.left = arrPos[i] + 'px';
+
+    // После завершения перемещения меняем источник через задержку
+    setTimeout(() => {
+        img.src = arr[i];
+        i++;
+        if(i >= arr.length) i=0;
+    }, 900); // задержка должна совпадать с продолжительностью transition
+}
+
+setInterval(changeSrc, 5000);
+
+
+
+
+
+const mixerStates = {
+    on: {
+        imgSrc: "img/Group%206.svg",
+
+        spinning: true
+    },
+    stop: {
+        imgSrc: "img/Group%206.svg",
+
+        spinning: false
+    },
+    error: {
+        imgSrc: "img/Group%206.svg",
+        spinning: false
+    }
+};
+
+const imgElement = document.getElementById('rotating-image');
+const indicator = document.getElementById('indicator');
+
+function updateStatus(status) {
+    if (imgElement && indicator && mixerStates[status]) {
+        // меняем изображение
+        imgElement.src = mixerStates[status].imgSrc;
+        // обновляем текст статуса
+
+
+        // управляем классом вращения
+        if (mixerStates[status].spinning) {
+            imgElement.classList.add('spin');
+        }
+        else {
+            imgElement.classList.remove('spin');
+            // сбрасываем трансформ, чтобы не было накопления
+            imgElement.style.transform = '';
+            // также сбрасываем угол вращения, чтобы при следующем включении было с нуля
+            rotationY = 0;
+        }
+    }
+}
+
+function mixer1() {
+    updateStatus('on');
+}
+
+function mixer2() {
+    updateStatus('stop');
+}
+
+function mixer3() {
+    updateStatus('error');
+}
+
+// Изначально устанавливаем состояние по умолчанию
+window.onload = () => {
+    updateStatus('stop');
+}
