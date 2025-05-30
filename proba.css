@@ -741,8 +741,47 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
-    transition: all 2s;
-
+    margin-top: 40px;
+    transition: all 0.2s ease; /* или другой длительности */
+    height: 50px;
+    width: 50px;
 }
 
+     /* Стиль для плавного вращения */
+ #rotating-image {
+     position: absolute;
+     width: 25px;
+     height: auto;
+     display: block;
+     margin-top: 20px;
+     left: 210px;
+     top: 250px;
+
+     /* по умолчанию без анимации */
+ }
+
+/* Класс для бесконечного вращения с ускорением */
+.spin {
+    animation: spinAnimation 0.3s linear infinite; /* ускорено до 1 секунды */
+}
+
+@keyframes spinAnimation {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.temp-cooling{
+    position: absolute;
+    top: 210px;
+    left: 910px;
+}
+
+.temp-drying{
+    position: absolute;
+    top: 210px;
+    left: 1360px;
+}
