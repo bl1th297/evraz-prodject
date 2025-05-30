@@ -35,6 +35,41 @@
             transform: rotateY(360deg);
         }
     }
+    /* Стили для сахара */
+    #sugar-container {
+        position: absolute;
+        top: 450px; /* Подкорректируйте под ваш дизайн */
+        left: 250px; /* Подкорректируйте под ваш дизайн */
+        width: 100px; /* ширина контейнера для сахара */
+        height: 120px; /* высота контейнера */
+        pointer-events: none; /* чтобы не мешать кликам */
+        overflow: visible;
+        z-index: 10;
+    }
+
+    .sugar-grain {
+        position: absolute;
+        width: 8px; /* увеличенный размер */
+        height: 8px;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 2px rgba(0,0,0,0.2);
+        animation: fall 1.2s forwards;
+        opacity: 1;
+    }
+
+    @keyframes fall {
+        0% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+    }
+
+
 </style>
 <body class="body">
 
@@ -151,7 +186,7 @@
 <!-- Контейнер для индикаторов -->
 <img id='rotating-image' src="img/venchik.svg" alt='Картинка смесителя'/>
 <script src="test2.js"></script>
-
+<div id="sugar-container"></div>
 
 </body>
 </html>
