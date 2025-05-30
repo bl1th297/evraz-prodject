@@ -79,3 +79,41 @@ function mixer3() {
 window.onload = () => {
     updateStatus('stop');
 }
+// Функция высыпания сахара
+function pourSugar() {
+    const sugarContainer = document.getElementById('sugar-container');
+    sugarContainer.innerHTML = ''; // очистить старые крупинки
+
+    for (let i = 0; i < 30; i++) {
+        const grain = document.createElement('div');
+        grain.classList.add('sugar-grain');
+        grain.style.left = Math.random() * (sugarContainer.clientWidth - 8) + 'px'; // случайное положение
+        grain.style.animationDelay = (Math.random() * 0.7) + 's'; // случайная задержка
+
+        sugarContainer.appendChild(grain);
+
+        grain.addEventListener('animationend', () => {
+            grain.remove();
+        });
+    }
+}
+
+// Обновленные функции ингредиентов
+function ingredients1() {
+    pourSugar();
+    updateStatus('on');
+}
+
+function ingredients2() {
+    updateStatus('stop');
+    const sugarContainer = document.getElementById('sugar-container');
+    sugarContainer.innerHTML = ''; // очистить сахар
+}
+
+function ingredients3() {
+    updateStatus('error');
+    const sugarContainer = document.getElementById('sugar-container');
+    sugarContainer.innerHTML = ''; // очистить сахар
+    alert('Авария! Проверьте оборудование.');
+}
+
