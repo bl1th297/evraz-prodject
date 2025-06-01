@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link
-            rel="stylesheet"
-            href="proba.css"
-    >
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link
+          rel="stylesheet"
+          href="proba.css"
+  >
 </head>
 
 <body class="body">
 
-<div class="container">
-    <div class="rectangle2"></div> <!--первый большой блок (подготовка сырья) -->
-    <div class="rectangle3"></div> <!--второй большой блок (смешивание) -->
-    <div class="rectangle4"></div> <!--третий большой блок (???)-->
-    <div class="rectangle5"></div> <!--первый средний блок (выкидывание форм) -->
-    <div class="rectangle6"></div> <!-- большой тунель охлаждения-->
-    <div class="rectangle8"></div> <!--четвертый большой блок (избавление от формы) -->
-    <div class="rectangle9"></div> <!--маленький тунель сушки-->
-    <div class="rectangle16"></div> <!--пятый большой блок (упаковка)-->
-    <div class="rectangle17"></div> <!--шестой большой блок (наклейка)-->
+<div class="container1">
+  <div class="rectangle2"></div> <!--первый большой блок (подготовка сырья) -->
+  <div class="rectangle3"></div> <!--второй большой блок (смешивание) -->
+  <div class="rectangle4"></div> <!--третий большой блок (???)-->
+  <div class="rectangle5"></div> <!--первый средний блок (выкидывание форм) -->
+  <div class="rectangle6"></div> <!-- большой тунель охлаждения-->
+  <div class="rectangle8"></div> <!--четвертый большой блок (избавление от формы) -->
+  <div class="rectangle9"></div> <!--маленький тунель сушки-->
+  <div class="rectangle16"></div> <!--пятый большой блок (упаковка)-->
+  <div class="rectangle17"></div> <!--шестой большой блок (наклейка)-->
 </div>
 
 <div class="rectangle7"></div> <!--маленький блок (заморозка)-->
@@ -53,70 +53,69 @@
 <div class="button-red9"></div> <!--шестой большой блок (наклейка)-->
 
 <div class="stage">
-    <div class="tunnel">
-        <div class="snowflake" style="left: 800px;">❄️</div>
-        <div class="snowflake" style="left: 1050px;">❄️</div>
-    </div>
-    <div class="conveyor-line working"></div>
+  <div class="tunnel">
+    <div class="snowflake" style="left: 800px;">❄️</div>
+    <div class="snowflake" style="left: 1050px;">❄️</div>
+  </div>
 </div>
-<div class="conveyor-belt working"></div>
-<div class="conveyor-roller roller-left"></div>
-<div class="conveyor-roller roller-right"></div>
+
+<div class="conveyor-belt"></div>
+
 <div class="employee"><img src="img/employee.jpg" /></div>
 
 
 <div>
-    <button class="ingredients1" id="ing-nts1" onclick="ingredients1()">ингредиенты: вкл</button>
-    <button class="ingredients2" id="ing-nts2" onclick="ingredients2()">ингредиенты: стоп</button>
-    <button class="ingredients3" id="ing-nts3" onclick="ingredients3()">ингредиенты: авария</button>
+  <button class="ingredients1" id="ing-nts1" onclick="ingredients1()">ингредиенты: вкл</button>
+  <button class="ingredients2" id="ing-nts2" onclick="ingredients2()">ингредиенты: стоп</button>
+  <button class="ingredients3" id="ing-nts3" onclick="ingredients3()">ингредиенты: авария</button>
 </div>
 
 <div>
-    <button class="mixer1" id="mix1" onclick="mixer1()">смеситель: вкл</button>
-    <button class="mixer2" id="mix2" onclick="mixer2()">смеситель: стоп</button>
-    <button class="mixer3" id="mix3" onclick="mixer3()">смеситель: авария</button>
+  <button class="mixer1" id="mix1" onclick="mixer1()">смеситель: вкл</button>
+  <button class="mixer2" id="mix2" onclick="mixer2()">смеситель: стоп</button>
+  <button class="mixer3" id="mix3" onclick="mixer3()">смеситель: авария</button>
 </div>
 
 <div>
-    <button class="preparation1" id="prep-on1" onclick="preparation1()">подготовка к формовке: вкл</button>
-    <button class="preparation2" id="prep-on2" onclick="preparation2()">подготовка к формовке: стоп</button>
-    <button class="preparation3" id="prep-on3" onclick="preparation3()">подготовка к формовке: авария</button>
+  <button class="preparation1" id="prep-on1" onclick="preparation1()">подготовка к формовке: вкл</button>
+  <button class="preparation2" id="prep-on2" onclick="preparation2()">подготовка к формовке: стоп</button>
+  <button class="preparation3" id="prep-on3" onclick="preparation3()">подготовка к формовке: авария</button>
 </div>
 
 <div>
-    <button class="molding1" id="mol-ng1" onclick="molding1()">формовка: вкл</button>
-    <button class="molding2" id="mol-ng2" onclick="molding2()">формовка: стоп</button>
-    <button class="molding3" id="mol-ng3" onclick="molding3()">формовка: авария</button>
+  <button class="molding1" id="mol-ng1" onclick="molding1()">формовка: вкл</button>
+  <button class="molding2" id="mol-ng2" onclick="molding2()">формовка: стоп</button>
+  <button class="molding3" id="mol-ng3" onclick="molding3()">формовка: авария</button>
 </div>
 
 <div>
-    <button class="cooling1" id="cool-ng1" onclick="cooling1()">охлаждение: вкл</button>
-    <button class="cooling2" id="cool-ng2" onclick="cooling2()">охлаждение: стоп</button>
-    <button class="cooling3" id="cool-ng3" onclick="cooling3()">охлаждение: авария</button>
+  <button class="cooling1" id="cool-ng1" onclick="cooling1()">охлаждение: вкл</button>
+  <button class="cooling2" id="cool-ng2" onclick="cooling2()">охлаждение: стоп</button>
+  <button class="cooling3" id="cool-ng3" onclick="cooling3()">охлаждение: авария</button>
 </div>
 
 <div>
-    <button class="remove1" id="rem-ve1" onclick="remove1()">убирание форм: вкл</button>
-    <button class="remove2" id="rem-ve2" onclick="remove2()">убирание форм: стоп</button>
-    <button class="remove3" id="rem-ve3" onclick="remove3()">убирание форм: авария</button>
+  <button class="remove1" id="rem-ve1" onclick="remove1()">убирание форм: вкл</button>
+  <button class="remove2" id="rem-ve2" onclick="remove2()">убирание форм: стоп</button>
+  <button class="remove3" id="rem-ve3" onclick="remove3()">убирание форм: авария</button>
 </div>
 
 <div>
-    <button class="drying1" id="dry-ng1" onclick="drying1()">сушка: вкл</button>
-    <button class="drying2" id="dry-ng2" onclick="drying2()">сушка: стоп</button>
-    <button class="drying3" id="dry-ng3" onclick="drying3()">сушка: авария</button>
+  <button class="drying1" id="dry-ng1" onclick="drying1()">сушка: вкл</button>
+  <button class="drying2" id="dry-ng2" onclick="drying2()">сушка: стоп</button>
+  <button class="drying3" id="dry-ng3" onclick="drying3()">сушка: авария</button>
 </div>
 
 <div>
-    <button class="packaging1" id="pack-ng1" onclick="packaging1()">упаквока: вкл</button>
-    <button class="packaging2" id="pack-ng2" onclick="packaging2()">упаковка: стоп</button>
-    <button class="packaging3" id="pack-ng3" onclick="packaging3()">упаковка: авария</button>
+  <button class="packaging1" id="pack-ng1" onclick="packaging1()">упаквока: вкл</button>
+  <button class="packaging2" id="pack-ng2" onclick="packaging2()">упаковка: стоп</button>
+  <button class="packaging3" id="pack-ng3" onclick="packaging3()">упаковка: авария</button>
 </div>
 
 <div>
-    <button class="sticker1" id="st-er1" onclick="sticker1()">стикер: вкл</button>
-    <button class="sticker2" id="st-er2" onclick="sticker2()">стикер: стоп</button>
-    <button class="sticker3" id="st-er3" onclick="sticker3()">стикер: авария</button>
+  <button class="sticker1" id="st-er1" onclick="sticker1()">стикер: вкл</button>
+  <button class="sticker2" id="st-er2" onclick="sticker2()">стикер: стоп</button>
+  <button class="sticker3" id="st-er3" onclick="sticker3()">стикер: авария</button>
 </div>
 
 <div class="temp-cooling"><h4>15°C</h4></div>
@@ -126,6 +125,31 @@
 <div id='indicator'> </div>
 <!-- Контейнер для индикаторов -->
 <img id='rotating-image' src="img/venchik.svg" alt='Картинка смесителя'/>
+
+
+<!--Мнемосхема первого и второго учатсков конвейерной транспортировки-->
+<div class="container2">
+  <div class="rectangle-mnem1"></div> <!--первый большой блок (подготовка сырья) -->
+  <div class="rectangle-mnem2"></div> <!--второй большой блок (смешивание) -->
+  <div class="rectangle-mnem3"></div> <!--???-->
+  <div class="rectangle-mnem4"></div> <!--???-->
+  <div class="button-red-mnem1"></div> <!--первый большой блок (подготовка сырья) -->
+  <div class="button-red-mnem2"></div> <!--второй большой блок (смешивание) -->
+</div>
+
+<div class="conveyor-belt-mnem"></div>
+
+<div>
+  <button class="ingredients-mnem1" id="ing-nts-mnem1" onclick="ingredients-mnem1()">ингредиенты: вкл</button>
+  <button class="ingredients-mnem2" id="ing-nts-mnem2" onclick="ingredients-mnem2()">ингредиенты: стоп</button>
+  <button class="ingredients-mnem3" id="ing-nts-mnem3" onclick="ingredients-mnem3()">ингредиенты: авария</button>
+</div>
+
+<div>
+  <button class="mixer-mnem1" id="mix-mnem1" onclick="mixermnem1()">смеситель: вкл</button>
+  <button class="mixer-mnem2" id="mix-mnem2" onclick="mixermnem2()">смеситель: стоп</button>
+  <button class="mixer-mnem3" id="mix-mnem3" onclick="mixermnem3()">смеситель: авария</button>
+</div>
 
 <script src="proba.js"></script>
 </body>
