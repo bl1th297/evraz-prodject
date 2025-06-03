@@ -42,7 +42,7 @@
     position: relative; /* Для позиционирования круга относительно прямоугольника */
     width: 100px;
     height: 200px;
-    background-color: #ED7914;
+    background-color: rgba(255, 200, 171, 0.8);
     border: 2px solid #333;
     margin: 20px;
 }
@@ -50,7 +50,7 @@
     position: relative; /* Для позиционирования круга относительно прямоугольника */
     width: 80px;
     height: 120px;
-    background-color: #ED7914;
+    background-color: rgba(255, 200, 171, 0.8);
     border: 2px solid #333;
     margin: 20px;
     top:45px;
@@ -81,7 +81,7 @@
     width: 100px;
     height: 200px;
     left: 220px;
-    background-color: #ED7914;
+    background-color: rgba(255, 200, 171, 0.8);
     border: 2px solid #333;
     margin: 20px;
 
@@ -136,7 +136,7 @@
 
 .rectangle14 {
     position: relative;
-    background-color: #ff9362;
+    background-color: rgba(255, 169, 125, 0.8);
     width: 150px;
     height: 10px;
     bottom: 420px;
@@ -145,7 +145,7 @@
 
 .rectangle15 {
     position: relative;
-    background-color: #ff9362;
+    background-color: rgba(255, 169, 125, 0.8);
     width: 10px;
     height: 160px;
     bottom: 430px;
@@ -157,7 +157,7 @@
     width: 100px;
     height: 200px;
     left: 300px;
-    background-color: #ED7914;
+    background-color: rgba(255, 200, 171, 0.8);
     border: 2px solid #333;
     margin: 20px;
 }
@@ -167,14 +167,14 @@
     width: 100px;
     height: 200px;
     left: 330px;
-    background-color: #ED7914;
+    background-color: rgba(255, 200, 171, 0.8);
     border: 2px solid #333;
     margin: 20px;
 }
 
 .rectangle18 {
     position: relative;
-    background-color: #ff9362;
+    background-color: rgba(255, 169, 125, 0.8);
     width: 90px;
     height: 10px;
     bottom: 540px;
@@ -183,7 +183,7 @@
 
 .rectangle19 {
     position: relative;
-    background-color: #ff9362;
+    background-color: rgba(255, 169, 125, 0.8);
     width: 10px;
     height: 100px;
     bottom: 540px;
@@ -192,7 +192,7 @@
 
 .rectangle20{
     position: relative;
-    background-color: #ff9362;
+    background-color: rgba(255, 169, 125, 0.8);
     width: 10px;
     height: 70px;
     left: 353px;
@@ -219,7 +219,7 @@
 
 .rectangle23{
     position: relative;
-    background-color: #ff9362;
+    background-color: rgba(255, 169, 125, 0.8);
     width: 10px;
     height: 60px;
     left: 1194px;
@@ -237,7 +237,7 @@
 
 .rectangle25{
     position: absolute;
-    background-color: #ff9362;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 2px solid #000000;
     width: 65px;
     height: 45px;
@@ -247,7 +247,7 @@
 
 .rectangle26{
     position: relative;
-    background-color: #ff9362;
+    background-color: rgba(255, 169, 125, 0.8);
     width: 10px;
     height: 60px;
     left: 1675px;
@@ -497,7 +497,7 @@ img {
 
 .preparation1{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 190px;
     height: 30px;
@@ -507,7 +507,7 @@ img {
 
 .preparation2{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 200px;
     height: 30px;
@@ -517,7 +517,7 @@ img {
 
 .preparation3{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 210px;
     height: 30px;
@@ -527,7 +527,7 @@ img {
 
 .molding1{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 150px;
     height: 30px;
@@ -537,7 +537,7 @@ img {
 
 .molding2{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 150px;
     height: 30px;
@@ -547,7 +547,7 @@ img {
 
 .molding3{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 150px;
     height: 30px;
@@ -557,7 +557,7 @@ img {
 
 .cooling1{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 150px;
     height: 30px;
@@ -567,7 +567,7 @@ img {
 
 .cooling2{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 150px;
     height: 30px;
@@ -577,7 +577,7 @@ img {
 
 .cooling3{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 150px;
     height: 30px;
@@ -587,7 +587,7 @@ img {
 
 .remove1{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 150px;
     height: 30px;
@@ -597,7 +597,7 @@ img {
 
 .remove2{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 150px;
     height: 30px;
@@ -607,7 +607,7 @@ img {
 
 .remove3{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 170px;
     height: 30px;
@@ -617,7 +617,7 @@ img {
 
 .drying1{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 150px;
     height: 30px;
@@ -627,7 +627,7 @@ img {
 
 .drying2{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 150px;
     height: 30px;
@@ -637,7 +637,7 @@ img {
 
 .drying3{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 150px;
     height: 30px;
@@ -647,7 +647,7 @@ img {
 
 .packaging1{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 150px;
     height: 30px;
@@ -657,7 +657,7 @@ img {
 
 .packaging2{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 150px;
     height: 30px;
@@ -667,7 +667,7 @@ img {
 
 .packaging3{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 150px;
     height: 30px;
@@ -677,7 +677,7 @@ img {
 
 .sticker1{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 150px;
     height: 30px;
@@ -687,7 +687,7 @@ img {
 
 .sticker2{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 150px;
     height: 30px;
@@ -697,7 +697,7 @@ img {
 
 .sticker3{
     position: absolute;
-    background-color: #ED7914;
+    background-color: rgba(255, 169, 125, 0.8);
     border: 1px solid #000000;
     width: 150px;
     height: 30px;
@@ -757,133 +757,3 @@ img {
     left: 1360px;
 }
 
-.container2 {
-    top: 900px;
-    width: 100%;
-    height: 550px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-
-.rectangle-mnem1 {
-    position: absolute; /* Для позиционирования круга относительно прямоугольника */
-    width: 100px;
-    height: 200px;
-    top: 900px;
-    right: 50%;
-    background-color: #ED7914;
-    border: 2px solid #333;
-    margin: 20px;
-}
-
-.rectangle-mnem2 {
-    position: absolute; /* Для позиционирования круга относительно прямоугольника */
-    width: 100px;
-    height: 200px;
-    top: 900px;
-    left: 50%;
-    background-color: #ED7914;
-    border: 2px solid #333;
-    margin: 20px;
-}
-
-.rectangle-mnem3{
-    position: absolute;
-    background-color: #ff9362;
-    width: 10px;
-    height: 70px;
-    left: 874px;
-    top: 1124px;
-}
-
-.rectangle-mnem4{
-    position: absolute;
-    background-color: #ff9362;
-    width: 10px;
-    height: 70px;
-    left: 1017px;
-    top: 1124px;
-}
-
-.button-red-mnem1{
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background: #b10202;
-    border-radius: 50%;
-    top: 927px; /* Смещение на половину размера круга */
-    left: 837px; /* Смещение на половину размера круга */
-    border: 1px solid #333;
-}
-
-.button-red-mnem2{
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background: #b10202;
-    border-radius: 50%;
-    top: 927px; /* Смещение на половину размера круга */
-    left: 980px; /* Смещение на половину размера круга */
-    border: 1px solid #333;
-}
-
-.ingredients-mnem1{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    top: 1450px;
-    right: 51%;
-}
-
-.ingredients-mnem2{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    top: 1510px;
-    right: 51%;
-}
-
-.ingredients-mnem3{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    top: 1570px;
-    right: 51%;
-}
-
-.mixer-mnem1{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    top: 1450px;
-    left: 51%;
-}
-
-.mixer-mnem2{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    top: 1510px;
-    left: 51%;
-}
-
-.mixer-mnem3{
-    position: absolute;
-    background-color: #ED7914;
-    border: 1px solid #000000;
-    width: 150px;
-    height: 30px;
-    top: 1570px;
-    left: 51%;
-}
