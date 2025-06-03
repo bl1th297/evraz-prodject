@@ -63,15 +63,15 @@ function updateStatus(status) {
     }
 }
 
-function mixermnem1() {
+function mixer1() {
     updateStatus('on');
 }
 
-function mixermnem2() {
+function mixer2() {
     updateStatus('stop');
 }
 
-function mixermnem3() {
+function mixer3() {
     updateStatus('error');
 }
 
