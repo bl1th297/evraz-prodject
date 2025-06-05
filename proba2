@@ -5,75 +5,13 @@
     <title>Title</title>
     <link
             rel="stylesheet"
-            href="test2.css"
+            href="evraz-prodject.css"
     >
 </head>
-<style>
-    /* Стиль для плавного вращения */
-    #rotating-image {
-        position: absolute;
-        width: 25px;
-        height: auto;
-        display: block;
-        margin-top: 20px;
-        left: 210px;
-        top: 250px;
 
-        /* по умолчанию без анимации */
-    }
-
-    /* Класс для бесконечного вращения с ускорением */
-    .spin {
-        animation: spinAnimation 0.3s linear infinite; /* ускорено до 1 секунды */
-    }
-
-    @keyframes spinAnimation {
-        from {
-            transform: rotateY(0deg);
-        }
-        to {
-            transform: rotateY(360deg);
-        }
-    }
-    /* Стили для сахара */
-    #sugar-container {
-        position: absolute;
-        top: 450px; /* Подкорректируйте под ваш дизайн */
-        left: 250px; /* Подкорректируйте под ваш дизайн */
-        width: 100px; /* ширина контейнера для сахара */
-        height: 120px; /* высота контейнера */
-        pointer-events: none; /* чтобы не мешать кликам */
-        overflow: visible;
-        z-index: 10;
-    }
-
-    .sugar-grain {
-        position: absolute;
-        width: 8px; /* увеличенный размер */
-        height: 8px;
-        background-color: #fff;
-        border-radius: 50%;
-        box-shadow: 0 0 2px rgba(0,0,0,0.2);
-        animation: fall 1.2s forwards;
-        opacity: 1;
-    }
-
-    @keyframes fall {
-        0% {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(100px);
-            opacity: 0;
-        }
-    }
-
-
-</style>
 <body class="body">
 
-<div class="container">
+<div class="container1">
     <div class="rectangle2"></div> <!--первый большой блок (подготовка сырья) -->
     <div class="rectangle3"></div> <!--второй большой блок (смешивание) -->
     <div class="rectangle4"></div> <!--третий большой блок (???)-->
@@ -119,11 +57,10 @@
         <div class="snowflake" style="left: 800px;">❄️</div>
         <div class="snowflake" style="left: 1050px;">❄️</div>
     </div>
-    <div class="conveyor-line working"></div>
 </div>
-<div class="conveyor-belt working"></div>
-<div class="conveyor-roller roller-left"></div>
-<div class="conveyor-roller roller-right"></div>
+
+<div id="conveyor-belt" class="conveyor-belt"></div>
+
 <div class="employee"><img src="img/employee.png" /></div>
 
 
@@ -181,12 +118,16 @@
     <button class="sticker3" id="st-er3" onclick="sticker3()">стикер: авария</button>
 </div>
 
-<img id="image-container" src="img/b.png">
+<div class="temp-cooling"><h4>15°C</h4></div>
+<div class="temp-drying"><h4>30°C</h4></div>
+
+<img id="image-container" src="img/plate.svg">
 <div id='indicator'> </div>
 <!-- Контейнер для индикаторов -->
 <img id='rotating-image' src="img/venchik.svg" alt='Картинка смесителя'/>
-<script src="test2.js"></script>
 <div id="sugar-container"></div>
 
+
+<script src="evraz-prodject.js"></script>
 </body>
 </html>
