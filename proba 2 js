@@ -1,5 +1,5 @@
-let arr = ["img/b.png", "img/o.png","img/g.png", "img/buttom.png","img/b.png", "img/o.png", "img/o.png", "img/buttom.png", "img/o.png","img/g.png","img/b.png", "img/buttom.png", "img/o.png" ];
-let arrPos = [50, 60,202, 350, 480, 610, 680, 900, 1190, 1360, 1515, 1680, 1850];
+let arr = ["img/plate.svg", "img/plate-ing-ts.svg", "img/plate-mix.svg", "img/plate.svg", "img/form.svg", "img/form-sprin-ing.svg", "img/jelly.svg", "img/jelly.svg", "img/marm-ade-bear.svg", "img/marm-ade-bear.svg", "img/pack-ing.svg", "img/sticker.svg"];
+let arrPos = [30, 50, 195, 340, 473, 605, 675, 900, 1183, 1355, 1510, 1680, 1840];
 let i = 1;
 
 function changeSrc() {
@@ -12,25 +12,19 @@ function changeSrc() {
     setTimeout(() => {
         img.src = arr[i];
         i++;
-        if(i >= arr.length) i=0;
+        if (i >= arr.length) i = 0;
     }, 900); // задержка должна совпадать с продолжительностью transition
 }
 
 setInterval(changeSrc, 5000);
 
-
-
-
-
 const mixerStates = {
     on: {
         imgSrc: "img/Group%206.svg",
-
         spinning: true
     },
     stop: {
         imgSrc: "img/Group%206.svg",
-
         spinning: false
     },
     error: {
@@ -42,78 +36,126 @@ const mixerStates = {
 const imgElement = document.getElementById('rotating-image');
 const indicator = document.getElementById('indicator');
 
-function updateStatus(status) {
+function updateMixerStatus(status) {
     if (imgElement && indicator && mixerStates[status]) {
         // меняем изображение
         imgElement.src = mixerStates[status].imgSrc;
-        // обновляем текст статуса
-
 
         // управляем классом вращения
         if (mixerStates[status].spinning) {
             imgElement.classList.add('spin');
-        }
-        else {
+        } else {
             imgElement.classList.remove('spin');
             // сбрасываем трансформ, чтобы не было накопления
             imgElement.style.transform = '';
-            // также сбрасываем угол вращения, чтобы при следующем включении было с нуля
-            rotationY = 0;
         }
     }
 }
 
 function mixer1() {
-    updateStatus('on');
+    updateMixerStatus('on');
 }
 
 function mixer2() {
-    updateStatus('stop');
+    updateMixerStatus('stop');
+}
+function mixer3() {
+    updateMixerStatus('error');
+    const conveyorBelt = document.querySelector('.conveyor-belt');
+    conveyorBelt.classList.add('no-animation'); // Остановить анимацию
+
 }
 
-function mixer3() {
-    updateStatus('error');
-}
 
 // Изначально устанавливаем состояние по умолчанию
 window.onload = () => {
-    updateStatus('stop');
+    updateMixerStatus('stop');
 }
-// Функция высыпания сахара
-function pourSugar() {
+
+function pourIngredients() {
     const sugarContainer = document.getElementById('sugar-container');
-    sugarContainer.innerHTML = ''; // очистить старые крупинки
+    sugarContainer.innerHTML = ''; // очистить контейнер
 
-    for (let i = 0; i < 30; i++) {
-        const grain = document.createElement('div');
-        grain.classList.add('sugar-grain');
-        grain.style.left = Math.random() * (sugarContainer.clientWidth - 8) + 'px'; // случайное положение
-        grain.style.animationDelay = (Math.random() * 0.7) + 's'; // случайная задержка
+    // Функция для создания крупинок
+    function createGrains(color, count, delayStart = 0) {
+        for (let i = 0; i < count; i++) {
+            const grain = document.createElement('div');
+            grain.classList.add('sugar-grain');
+            grain.style.left = Math.random() * (sugarContainer.clientWidth - 8) + 'px'; // случайное положение
+            grain.style.backgroundColor = color; // устанавливаем цвет
+            grain.style.animationDelay = (delayStart + Math.random() * 0.7) + 's'; // случайная задержка
 
-        sugarContainer.appendChild(grain);
+            sugarContainer.appendChild(grain);
 
-        grain.addEventListener('animationend', () => {
-            grain.remove();
+            grain.addEventListener('animationend', () => {
+                grain.remove();
+            });
+        }
+    }
+
+    // Функция для создания воды
+    function pourWater(color, delayStart) {
+        const water = document.createElement('div');
+        water.classList.add('water');
+        water.style.backgroundColor = color;
+        water.style.animationDelay = delayStart + 's';
+        sugarContainer.appendChild(water);
+
+        // Удаляем воду после анимации
+        water.addEventListener('animationend', () => {
+            water.remove();
         });
     }
+
+    // Последовательное высыпание
+    setTimeout(() => {
+        createGrains('#fff', 30, 0); // Белый порошок
+    }, 0);
+
+    setTimeout(() => {
+        pourWater('#fff', 1); // Белая вода
+    }, 2000);
+
+    setTimeout(() => {
+        createGrains('#FFD700', 30, 2); // Желтый порошок
+    }, 4000);
+
+    setTimeout(() => {
+        pourWater('#00BFFF', 3); // Голубая вода
+    }, 6000);
+
+    setTimeout(() => {
+        createGrains('#FF0000', 30, 4); // Красный порошок
+    }, 8000);
+
+    setTimeout(() => {
+        createGrains('#fff', 30, 5); // Белый порошок
+    }, 11000);
 }
 
 // Обновленные функции ингредиентов
 function ingredients1() {
-    pourSugar();
+    console.log('ingredients1')
+    pourIngredients();
     updateStatus('on');
 }
 
 function ingredients2() {
+    console.log('ingredients2')
     updateStatus('stop');
     const sugarContainer = document.getElementById('sugar-container');
     sugarContainer.innerHTML = ''; // очистить сахар
 }
 
+
+
 function ingredients3() {
-    updateStatus('error');
+    updateMixerStatus('error');
+    const conveyorBelt = document.querySelector('.conveyor-belt');
+    conveyorBelt.classList.add('no-animation'); // Остановить анимацию
     const sugarContainer = document.getElementById('sugar-container');
-    sugarContainer.innerHTML = ''; // очистить сахар
-    alert('Авария! Проверьте оборудование.');
+    sugarContainer.innerHTML = ''; // Очистить сахар
+
 }
+
 
