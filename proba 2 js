@@ -1,6 +1,21 @@
-let arr = ["img/plate.svg", "img/plate-ing-ts.svg", "img/plate-mix.svg", "img/plate.svg", "img/form.svg", "img/form-sprin-ing.svg", "img/jelly.svg", "img/jelly.svg", "img/marm-ade-bear.svg", "img/marm-ade-bear.svg", "img/pack-ing.svg", "img/sticker.svg"];
+let arr = [
+    "img/plate.svg",
+    "img/plate-ing-ts.svg",
+    "img/plate-mix.svg",
+    "img/plate.svg",
+    "img/form.svg",
+    "img/form-sprin-ing.svg",
+    "img/jelly.svg",
+    "img/jelly.svg",
+    "img/marm-ade-bear.svg",
+    "img/marm-ade-bear.svg",
+    "img/pack-ing.svg",
+    "img/sticker.svg"
+];
 let arrPos = [30, 50, 195, 340, 473, 605, 675, 900, 1183, 1355, 1510, 1680, 1840];
 let i = 1;
+let intervalId = null; // для отслеживания состояния интервала
+let ingredientsRunning = false; // Переменная для отслеживания состояния ингредиентов
 
 function changeSrc() {
     const img = document.getElementById("image-container");
@@ -16,7 +31,71 @@ function changeSrc() {
     }, 900); // задержка должна совпадать с продолжительностью transition
 }
 
-setInterval(changeSrc, 5000);
+function startImageChange() {
+    if (intervalId !== null) return; // если интервал уже запущен, не запускаем снова
+
+    intervalId = setInterval(changeSrc, 3000);
+}
+
+function stopChangingImages() {
+    if (intervalId !== null) {
+        clearInterval(intervalId);
+        intervalId = null; // сбрасываем интервал
+    }
+}
+
+function mixer3() {
+    updateMixerStatus('error');
+    const conveyorBelt = document.querySelector('.conveyor-belt');
+    conveyorBelt.classList.add('no-animation'); // Останавливаем движение
+    stopChangingImages(); // Останавливаем смену изображений
+}
+
+function ingredients3() {
+    updateMixerStatus('error');
+    const conveyorBelt = document.querySelector('.conveyor-belt');
+    conveyorBelt.classList.add('no-animation'); // Останавливаем движение
+    const sugarContainer = document.getElementById('sugar-container');
+    sugarContainer.innerHTML = ''; // Очищаем сахар
+    stopChangingImages(); // Останавливаем смену изображений
+}
+
+// Запускаем смену изображений
+startImageChange();
+
+function mixer1() {
+    updateMixerStatus('on');
+    const conveyorBelt = document.querySelector('.conveyor-belt');
+    conveyorBelt.classList.remove('no-animation'); // Запускаем движение
+    startImageChange(); // Запускаем смену изображений
+}
+
+function ingredients1() {
+    console.log('ingredients1');
+    ingredientsRunning = true; // разрешаем запуск ингредиентов
+    pourIngredients();
+
+    const conveyorBelt = document.querySelector('.conveyor-belt');
+    conveyorBelt.classList.remove('no-animation'); // Запускаем движение
+    startImageChange(); // Запускаем смену изображений
+}
+
+function mixer2() {
+    updateMixerStatus('stop');
+    const conveyorBelt = document.querySelector('.conveyor-belt');
+
+    stopChangingImages(); // Останавливаем смену изображений
+}
+
+function ingredients2() {
+    console.log('ingredients2');
+    ingredientsRunning = false; // запрещаем запуск ингредиентов
+
+    const sugarContainer = document.getElementById('sugar-container');
+    sugarContainer.innerHTML = ''; // очистить сахар
+    stopChangingImages(); // Останавливаем смену изображений
+}
+
 
 const mixerStates = {
     on: {
@@ -52,19 +131,10 @@ function updateMixerStatus(status) {
     }
 }
 
-function mixer1() {
-    updateMixerStatus('on');
-}
 
-function mixer2() {
-    updateMixerStatus('stop');
-}
-function mixer3() {
-    updateMixerStatus('error');
-    const conveyorBelt = document.querySelector('.conveyor-belt');
-    conveyorBelt.classList.add('no-animation'); // Остановить анимацию
 
-}
+
+
 
 
 // Изначально устанавливаем состояние по умолчанию
@@ -72,90 +142,84 @@ window.onload = () => {
     updateMixerStatus('stop');
 }
 
-function pourIngredients() {
+async function pourIngredients() {
+    if (!ingredientsRunning) return; // если остановлено — не запускаем
+
     const sugarContainer = document.getElementById('sugar-container');
     sugarContainer.innerHTML = ''; // очистить контейнер
 
     // Функция для создания крупинок
-    function createGrains(color, count, delayStart = 0) {
+    async function createGrains(color, count, delayStart = 0) {
+        if (!ingredientsRunning) return;
+
+        const sugarContainer = document.getElementById('sugar-container');
+        let grainsCreated = 0;
+
+        function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
         for (let i = 0; i < count; i++) {
+            if (!ingredientsRunning) break;
+
             const grain = document.createElement('div');
             grain.classList.add('sugar-grain');
-            grain.style.left = Math.random() * (sugarContainer.clientWidth - 8) + 'px'; // случайное положение
-            grain.style.backgroundColor = color; // устанавливаем цвет
-            grain.style.animationDelay = (delayStart + Math.random() * 0.7) + 's'; // случайная задержка
+            grain.style.left = Math.random() * (sugarContainer.clientWidth - 8) + 'px';
+            grain.style.backgroundColor = color;
+            grain.style.animationDelay = '0s'; // убираем случайную задержку
 
             sugarContainer.appendChild(grain);
 
             grain.addEventListener('animationend', () => {
                 grain.remove();
+                grainsCreated++;
             });
-        }
-    }
 
+            await delay(50);
+        }
+
+        // Ждем, пока все крупицы закончат анимацию
+        await new Promise(resolve => {
+            const interval = setInterval(() => {
+                if (grainsCreated === count) {
+                    clearInterval(interval);
+                    resolve();
+                }
+            }, 50);
+        });
+    }
     // Функция для создания воды
     function pourWater(color, delayStart) {
-        const water = document.createElement('div');
-        water.classList.add('water');
-        water.style.backgroundColor = color;
-        water.style.animationDelay = delayStart + 's';
-        sugarContainer.appendChild(water);
+        return new Promise((resolve) => {
+            if (!ingredientsRunning) return resolve(); // проверка перед созданием
+            const water = document.createElement('div');
+            water.classList.add('water');
+            water.style.backgroundColor = color;
+            water.style.animationDelay = delayStart + 's';
+            sugarContainer.appendChild(water);
 
-        // Удаляем воду после анимации
-        water.addEventListener('animationend', () => {
-            water.remove();
+            // Удаляем воду после анимации
+            water.addEventListener('animationend', () => {
+                water.remove();
+                resolve();
+            });
         });
     }
 
     // Последовательное высыпание
-    setTimeout(() => {
-        createGrains('#fff', 30, 0); // Белый порошок
-    }, 0);
-
-    setTimeout(() => {
-        pourWater('#fff', 1); // Белая вода
-    }, 2000);
-
-    setTimeout(() => {
-        createGrains('#FFD700', 30, 2); // Желтый порошок
-    }, 4000);
-
-    setTimeout(() => {
-        pourWater('#00BFFF', 3); // Голубая вода
-    }, 6000);
-
-    setTimeout(() => {
-        createGrains('#FF0000', 30, 4); // Красный порошок
-    }, 8000);
-
-    setTimeout(() => {
-        createGrains('#fff', 30, 5); // Белый порошок
-    }, 11000);
+    await createGrains('#fff', 30, 0); // Белый порошок
+    await pourWater('#fff', 1); // Белая вода
+    await createGrains('#FFD700', 30, 2); // Желтый порошок
+    await pourWater('#00BFFF', 3); // Голубая вода
+    await createGrains('#FF0000', 30, 4); // Красный порошок
+    await createGrains('#fff', 30, 5); // Белый порошок
 }
-
 // Обновленные функции ингредиентов
-function ingredients1() {
-    console.log('ingredients1')
-    pourIngredients();
-    updateStatus('on');
-}
-
-function ingredients2() {
-    console.log('ingredients2')
-    updateStatus('stop');
-    const sugarContainer = document.getElementById('sugar-container');
-    sugarContainer.innerHTML = ''; // очистить сахар
-}
 
 
 
-function ingredients3() {
-    updateMixerStatus('error');
-    const conveyorBelt = document.querySelector('.conveyor-belt');
-    conveyorBelt.classList.add('no-animation'); // Остановить анимацию
-    const sugarContainer = document.getElementById('sugar-container');
-    sugarContainer.innerHTML = ''; // Очистить сахар
 
-}
+
+
 
 
