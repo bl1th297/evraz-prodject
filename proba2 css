@@ -810,11 +810,11 @@ img {
 }
 
 .indicator.stop {
-    background-color: yellow;
+    background-color: red;
 }
 
 .indicator.error {
-    background-color: red;
+    background-color:orange;
 }
 
 .indicator.off {
