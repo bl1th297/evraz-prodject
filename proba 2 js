@@ -48,10 +48,15 @@ window.onload = function() {
 
     i = 1;
     imagesStopped = false;
+
+    updateMixerStatus('stop');
+    updateMixerIndicator('off');
+    updateIngredientsIndicator('off');
 };
 
 function mixer1() {
     updateMixerStatus('on');
+    updateMixerIndicator('on');
     imagesStopped = false; // разрешаем смену изображений
     const conveyorBelt = document.querySelector('.conveyor-belt');
     conveyorBelt.classList.remove('no-animation'); // запускаем движение конвейера
@@ -62,6 +67,7 @@ function ingredients1() {
     console.log('ingredients1');
     ingredientsRunning = true;
     pourIngredients();
+    updateIngredientsIndicator('on');
     imagesStopped = false; // разрешаем смену изображений
     const conveyorBelt = document.querySelector('.conveyor-belt');
     conveyorBelt.classList.remove('no-animation'); // запускаем движение конвейера
@@ -70,17 +76,20 @@ function ingredients1() {
 
 function mixer2() {
     updateMixerStatus('stop');
+    updateMixerIndicator('stop');
 }
 
 function ingredients2() {
     console.log('ingredients2');
     ingredientsRunning = false;
+    updateIngredientsIndicator('stop');
     const sugarContainer = document.getElementById('sugar-container');
     sugarContainer.innerHTML = '';
 }
 
 function mixer3() {
     updateMixerStatus('error');
+    updateMixerIndicator('error');
     const conveyorBelt = document.querySelector('.conveyor-belt');
     conveyorBelt.classList.add('no-animation'); // Останавливаем движение
     stopChangingImages();
@@ -88,6 +97,8 @@ function mixer3() {
 
 function ingredients3() {
     updateMixerStatus('error');
+    updateMixerIndicator('error');
+    updateIngredientsIndicator('error');
     const conveyorBelt = document.querySelector('.conveyor-belt');
     conveyorBelt.classList.add('no-animation'); // Останавливаем движение
     const sugarContainer = document.getElementById('sugar-container');
@@ -134,15 +145,57 @@ function updateMixerStatus(status) {
     }
 }
 
+// --- Обновленные функции индикаторов (кружочки без текста) ---
 
+function updateMixerIndicator(status) {
+    const mixerIndicator = document.getElementById('mixer-indicator');
+    if (!mixerIndicator) return;
 
+    mixerIndicator.classList.remove('on', 'stop', 'error', 'off');
 
+    switch (status) {
+        case 'on':
+            mixerIndicator.classList.add('on');
+            break;
+        case 'stop':
+            mixerIndicator.classList.add('stop');
+            break;
+        case 'error':
+            mixerIndicator.classList.add('error');
+            break;
+        default:
+            mixerIndicator.classList.add('off');
+    }
+}
 
+function updateIngredientsIndicator(status) {
+    const ingredientsIndicator = document.getElementById('ingredients-indicator');
+    if (!ingredientsIndicator) return;
 
+    ingredientsIndicator.classList.remove('on', 'stop', 'error', 'off');
+
+    switch (status) {
+        case 'on':
+            ingredientsIndicator.classList.add('on');
+            break;
+        case 'stop':
+            ingredientsIndicator.classList.add('stop');
+            break;
+        case 'error':
+            ingredientsIndicator.classList.add('error');
+            break;
+        default:
+            ingredientsIndicator.classList.add('off');
+    }
+}
+
+// --- Конец обновленных функций индикаторов ---
 
 // Изначально устанавливаем состояние по умолчанию
 window.onload = () => {
     updateMixerStatus('stop');
+    updateMixerIndicator('off');
+    updateIngredientsIndicator('off');
 }
 
 async function pourIngredients() {
@@ -217,12 +270,4 @@ async function pourIngredients() {
     await createGrains('#FF0000', 30, 4); // Красный порошок
     await createGrains('#fff', 30, 5); // Белый порошок
 }
-// Обновленные функции ингредиентов
-
-
-
-
-
-
-
 
