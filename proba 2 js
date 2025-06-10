@@ -6,8 +6,11 @@ let arr = [
 let arrPos = [30, 50, 195];
 let i = 1; // индекс следующего изображения
 let ingredientsRunning = false;
+let imagesStopped = false; // флаг для остановки смены изображений
 
 function changeSrcOnce() {
+    if (imagesStopped) return; // если смена изображений остановлена — ничего не делаем
+
     const img = document.getElementById("image-container");
 
     // Перемещаем изображение к позиции i
@@ -15,6 +18,8 @@ function changeSrcOnce() {
 
     // Через задержку меняем источник
     setTimeout(() => {
+        if (imagesStopped) return; // проверка повторно
+
         img.src = arr[i];
 
         i++;
@@ -23,10 +28,12 @@ function changeSrcOnce() {
 
             // Когда дошли до конца, через паузу возвращаем на первую позицию
             setTimeout(() => {
+                if (imagesStopped) return;
+
                 img.style.left = arrPos[0] + 'px';
                 img.src = arr[0];
                 i = 1; // следующий индекс снова 1
-            }, 1500); // задержка перед возвратом (1.5 секунды, можно изменить)
+            }, 1500);
         }
     }, 900);
 }
@@ -40,10 +47,14 @@ window.onload = function() {
     img.style.left = arrPos[0] + 'px';
 
     i = 1;
+    imagesStopped = false;
 };
 
 function mixer1() {
     updateMixerStatus('on');
+    imagesStopped = false; // разрешаем смену изображений
+    const conveyorBelt = document.querySelector('.conveyor-belt');
+    conveyorBelt.classList.remove('no-animation'); // запускаем движение конвейера
     changeSrcOnce();
 }
 
@@ -51,6 +62,9 @@ function ingredients1() {
     console.log('ingredients1');
     ingredientsRunning = true;
     pourIngredients();
+    imagesStopped = false; // разрешаем смену изображений
+    const conveyorBelt = document.querySelector('.conveyor-belt');
+    conveyorBelt.classList.remove('no-animation'); // запускаем движение конвейера
     changeSrcOnce();
 }
 
@@ -69,7 +83,7 @@ function mixer3() {
     updateMixerStatus('error');
     const conveyorBelt = document.querySelector('.conveyor-belt');
     conveyorBelt.classList.add('no-animation'); // Останавливаем движение
-    stopChangingImages(); // Останавливаем смену изображений
+    stopChangingImages();
 }
 
 function ingredients3() {
@@ -78,8 +92,13 @@ function ingredients3() {
     conveyorBelt.classList.add('no-animation'); // Останавливаем движение
     const sugarContainer = document.getElementById('sugar-container');
     sugarContainer.innerHTML = ''; // Очищаем сахар
-    stopChangingImages(); // Останавливаем смену изображений
+    stopChangingImages();
 }
+
+function stopChangingImages() {
+    imagesStopped = true;
+}
+
 
 const mixerStates = {
     on: {
