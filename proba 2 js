@@ -33,9 +33,9 @@ function changeSrcOnce() {
                 img.style.left = arrPos[0] + 'px';
                 img.src = arr[0];
                 i = 1; // следующий индекс снова 1
-            }, 1500);
+            }, 3000);
         }
-    }, 900);
+    }, 3000);
 }
 
 window.onload = function() {
