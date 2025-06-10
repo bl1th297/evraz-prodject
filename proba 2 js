@@ -2,46 +2,67 @@ let arr = [
     "img/plate.svg",
     "img/plate-ing-ts.svg",
     "img/plate-mix.svg",
-    "img/plate.svg",
-    "img/form.svg",
-    "img/form-sprin-ing.svg",
-    "img/jelly.svg",
-    "img/jelly.svg",
-    "img/marm-ade-bear.svg",
-    "img/marm-ade-bear.svg",
-    "img/pack-ing.svg",
-    "img/sticker.svg"
 ];
-let arrPos = [30, 50, 195, 340, 473, 605, 675, 900, 1183, 1355, 1510, 1680, 1840];
-let i = 1;
-let intervalId = null; // для отслеживания состояния интервала
-let ingredientsRunning = false; // Переменная для отслеживания состояния ингредиентов
+let arrPos = [30, 50, 195];
+let i = 1; // индекс следующего изображения
+let ingredientsRunning = false;
 
-function changeSrc() {
+function changeSrcOnce() {
     const img = document.getElementById("image-container");
 
-    // Перемещаем изображение
+    // Перемещаем изображение к позиции i
     img.style.left = arrPos[i] + 'px';
 
-    // После завершения перемещения меняем источник через задержку
+    // Через задержку меняем источник
     setTimeout(() => {
         img.src = arr[i];
+
         i++;
-        if (i >= arr.length) i = 0;
-    }, 900); // задержка должна совпадать с продолжительностью transition
+        if (i >= arr.length) {
+            i = 0;
+
+            // Когда дошли до конца, через паузу возвращаем на первую позицию
+            setTimeout(() => {
+                img.style.left = arrPos[0] + 'px';
+                img.src = arr[0];
+                i = 1; // следующий индекс снова 1
+            }, 1500); // задержка перед возвратом (1.5 секунды, можно изменить)
+        }
+    }, 900);
 }
 
-function startImageChange() {
-    if (intervalId !== null) return; // если интервал уже запущен, не запускаем снова
+window.onload = function() {
+    const conveyorBelt = document.querySelector('.conveyor-belt');
+    conveyorBelt.classList.remove('no-animation');
 
-    intervalId = setInterval(changeSrc, 3000);
+    const img = document.getElementById("image-container");
+    img.src = arr[0];
+    img.style.left = arrPos[0] + 'px';
+
+    i = 1;
+};
+
+function mixer1() {
+    updateMixerStatus('on');
+    changeSrcOnce();
 }
 
-function stopChangingImages() {
-    if (intervalId !== null) {
-        clearInterval(intervalId);
-        intervalId = null; // сбрасываем интервал
-    }
+function ingredients1() {
+    console.log('ingredients1');
+    ingredientsRunning = true;
+    pourIngredients();
+    changeSrcOnce();
+}
+
+function mixer2() {
+    updateMixerStatus('stop');
+}
+
+function ingredients2() {
+    console.log('ingredients2');
+    ingredientsRunning = false;
+    const sugarContainer = document.getElementById('sugar-container');
+    sugarContainer.innerHTML = '';
 }
 
 function mixer3() {
@@ -59,43 +80,6 @@ function ingredients3() {
     sugarContainer.innerHTML = ''; // Очищаем сахар
     stopChangingImages(); // Останавливаем смену изображений
 }
-
-// Запускаем смену изображений
-startImageChange();
-
-function mixer1() {
-    updateMixerStatus('on');
-    const conveyorBelt = document.querySelector('.conveyor-belt');
-    conveyorBelt.classList.remove('no-animation'); // Запускаем движение
-    startImageChange(); // Запускаем смену изображений
-}
-
-function ingredients1() {
-    console.log('ingredients1');
-    ingredientsRunning = true; // разрешаем запуск ингредиентов
-    pourIngredients();
-
-    const conveyorBelt = document.querySelector('.conveyor-belt');
-    conveyorBelt.classList.remove('no-animation'); // Запускаем движение
-    startImageChange(); // Запускаем смену изображений
-}
-
-function mixer2() {
-    updateMixerStatus('stop');
-    const conveyorBelt = document.querySelector('.conveyor-belt');
-
-    stopChangingImages(); // Останавливаем смену изображений
-}
-
-function ingredients2() {
-    console.log('ingredients2');
-    ingredientsRunning = false; // запрещаем запуск ингредиентов
-
-    const sugarContainer = document.getElementById('sugar-container');
-    sugarContainer.innerHTML = ''; // очистить сахар
-    stopChangingImages(); // Останавливаем смену изображений
-}
-
 
 const mixerStates = {
     on: {
