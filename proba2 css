@@ -255,27 +255,6 @@
     bottom: 730px;
 }
 
-.button-red1 {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background: #b10202;
-    border-radius: 50%;
-    top: 35px; /* Смещение на половину размера круга */
-    left: 35px; /* Смещение на половину размера круга */
-    border: 1px solid #333;
-}
-
-.button-red2 {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background: #b10202;
-    border-radius: 50%;
-    top: 35px; /* Смещение на половину размера круга */
-    left: 180px; /* Смещение на половину размера круга */
-    border: 1px solid #333;
-}
 
 .button-red3 {
     position: absolute;
@@ -801,4 +780,43 @@ img {
         transform: translateY(50px);
         opacity: 0;
     }
+}
+#indicators-container {
+    position: relative; /* если нужно, можно убрать */
+    display: flex;       /* чтобы расположить индикаторы в строку */
+    gap: 10px;           /* расстояние между индикаторами */
+    margin: 20px; /* отступы вокруг контейнера */
+    /* можно добавить top/left, если нужно позиционировать */
+}
+
+/* Индикаторы теперь блочные и без абсолютного позиционирования */
+.indicator {
+    width: 20px;
+
+    height: 20px;
+    border-radius: 50%;
+    background-color: gray; /* цвет по умолчанию */
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    /* Убираем position, bottom, left */
+    /* position: relative; */
+    /* bottom: 1087px; */
+    /* left: 25px; */
+
+}
+
+.indicator.on {
+    background-color: green;
+}
+
+.indicator.stop {
+    background-color: yellow;
+}
+
+.indicator.error {
+    background-color: red;
+}
+
+.indicator.off {
+    background-color: gray;
 }
